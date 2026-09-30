@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Member List Rows" subtitle="Avatar + name + ID + badge + action" viewport="700x220" --><html><head><meta charset="utf-8"><title>Cards & Rows</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+.row-item { display: flex; align-items: center; gap: 14px; padding: 10px 12px; border: 1px solid var(--border-default); border-radius: 12px; background: #fff; }
+.row-item:hover { background: #FFF5F0; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gradient-sunset); color: #fff; font: 700 14px var(--font-sans); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.name { font: 600 14px var(--font-sans); color: var(--text-primary); }
+.id { font: 400 11px var(--font-mono); color: var(--text-secondary); margin-top: 2px; }
+.badge { height: 22px; border-radius: 9999px; padding: 0 10px; font: 600 11px var(--font-sans); display: inline-flex; align-items: center; }
+</style></head><body>
+<div class="col" style="gap: 8px;">
+  <div class="row-item">
+    <div class="avatar">AL</div>
+    <div style="flex: 1;"><div class="name">Alice Lim</div><div class="id">ID: 00272400000004</div></div>
+    <span class="badge" style="background: #E8F8E8; color: #00CE73;">Activated</span>
+    <span class="t-link">Edit</span>
+  </div>
+  <div class="row-item" style="background: #FFF5F0;">
+    <div class="avatar" style="background: linear-gradient(50deg, #37E4D2 0%, #00CE73 100%);">BK</div>
+    <div style="flex: 1;"><div class="name">Bryan Koh</div><div class="id">ID: 00272400000005</div></div>
+    <span class="badge" style="background: #F0E6FF; color: #8E44AD;">VIP</span>
+    <span class="t-link">Edit</span>
+  </div>
+  <div class="row-item">
+    <div class="avatar" style="background: linear-gradient(50deg, #FFABE7 0%, #904AA8 100%);">CN</div>
+    <div style="flex: 1;"><div class="name">Cheng Nguyen</div><div class="id">ID: 00272400000006</div></div>
+    <span class="badge" style="background: #FDE8E8; color: #FF5C4C;">Unactivated</span>
+    <span style="font: 500 13px var(--font-sans); color: #FF5C4C; cursor: pointer;">Remove</span>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Surfaces" subtitle="Page · Card · Hover · Input — never #FFF on the page" viewport="700x150" --><html><head><meta charset="utf-8"><title>Surfaces</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 0; }
+  /* Stage = the Page surface itself — let it BE the canvas */
+  .stage {
+    background: #FAFAFA;
+    padding: 18px;
+    min-height: 100%;
+    position: relative;
+  }
+  .page-tag {
+    position: absolute; top: 14px; right: 16px;
+    font: 600 9px var(--font-sans); letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .page-tag .hex { font: 400 9px var(--font-mono); margin-left: 6px; color: var(--text-secondary); }
+
+  /* Card surface — sits on the stage with the real card shadow */
+  .demo-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .row-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px; border-radius: 10px;
+    font: 500 12px var(--font-sans); color: var(--text-primary);
+    border: 1px solid transparent;
+  }
+  .row-item.hover { background: #FFF5F0; }
+  .swatch-dot {
+    width: 18px; height: 18px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.05);
+    flex-shrink: 0;
+  }
+  .tag {
+    margin-left: auto;
+    font: 400 10px var(--font-mono);
+    color: var(--text-secondary);
+  }
+  .role { font: 600 11px var(--font-sans); color: var(--text-primary); letter-spacing: 0; }
+  .desc { font: 400 11px var(--font-sans); color: var(--text-secondary); }
+
+  /* Input surface — slightly recessed cool tint inside a card */
+  .field {
+    background: #F7F8FC;
+    border: 1px solid #E8ECF1;
+    border-radius: 8px;
+    height: 32px;
+    padding: 0 12px;
+    font: 400 12px var(--font-sans); color: var(--text-primary);
+    display: flex; align-items: center;
+  }
+</style>
+</head><body>
+<div class="stage">
+  <span class="page-tag">Page · <span class="hex">#FAFAFA</span></span>
+
+  <div class="demo-card">
+    <div class="row-item">
+      <span class="swatch-dot" style="background: #FFFFFF;"></span>
+      <span class="role">Card</span>
+      <span class="desc">white surface — every data cluster</span>
+      <span class="tag">#FFFFFF</span>
+    </div>
+    <div class="row-item hover">
+      <span class="swatch-dot" style="background: #FFF5F0;"></span>
+      <span class="role">Hover</span>
+      <span class="desc">warm cream — row + list highlight</span>
+      <span class="tag">#FFF5F0</span>
+    </div>
+    <div class="field">
+      <span class="swatch-dot" style="background: #F7F8FC; margin-right: 10px;"></span>
+      <span class="role" style="margin-right: 6px;">Input</span>
+      <span class="desc">recessed cool tint inside a card</span>
+      <span class="tag" style="margin-left: auto;">#F7F8FC</span>
+    </div>
+  </div>
+</div>
+</body></html>

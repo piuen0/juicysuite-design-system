@@ -1,0 +1,40 @@
+<!-- @dsCard group="SaaS App" viewport="1440x900" name="Operator Console" subtitle="Clickable Dashboard · Members · Earning" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>JuicySuite — Operator Console</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}body{padding:0;}#root{display:flex;min-height:100vh;}button:focus,input:focus{outline:none;}input::placeholder{color:rgba(94,85,90,0.55);}aside input::placeholder{color:rgba(255,255,255,0.8);}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel" src="Dashboard.jsx"></script>
+<script type="text/babel" src="Members.jsx"></script>
+<script type="text/babel" src="Earning.jsx"></script>
+<script type="text/babel" src="Placeholder.jsx"></script>
+<script type="text/babel">
+const { Sidebar, TopHeader, Button } = window.JS;
+const META = {
+  dashboard: { title: "Dashboard", subtitle: "Your loyalty program at a glance — May 26, 2026", cta: "Add Campaign", Comp: window.DashboardScreen },
+  members: { title: "Members", subtitle: "12,438 active members across 4 tiers", cta: "New member", Comp: window.MembersScreen },
+  earning: { title: "Earning", subtitle: "Campaigns and rules that award points", Comp: window.EarningScreen },
+  rewards: { title: "Rewards", subtitle: "Catalog members can redeem with their points", Comp: () => <window.PlaceholderScreen title="Rewards catalog" body="Curate the rewards members can redeem with their points." /> },
+  reports: { title: "Reports", subtitle: "Lifetime value, redemption mix, and campaign ROI", Comp: () => <window.PlaceholderScreen title="Reports" body="Pick a date range to build your first report." /> },
+  billing: { title: "Billing", subtitle: "Plan, usage and invoices", Comp: () => <window.PlaceholderScreen title="Billing" body="Plan, usage, and invoicing for your JuicySuite workspace." /> },
+  settings: { title: "Workspace settings", subtitle: "Team, integrations and notifications", Comp: () => <window.PlaceholderScreen title="Workspace settings" body="Team members, integrations, brand styling and notification rules." /> },
+};
+function App() {
+  const [active, setActive] = React.useState(localStorage.getItem("js-kit-page") || "dashboard");
+  const nav = id => { setActive(id); localStorage.setItem("js-kit-page", id); window.scrollTo(0, 0); };
+  const m = META[active] || META.dashboard; const Screen = m.Comp;
+  return <React.Fragment>
+    <Sidebar active={active} onNav={nav} />
+    <main style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }} data-screen-label={m.title}>
+      <TopHeader title={m.title} subtitle={m.subtitle} actions={m.cta ? <Button icon="plus">{m.cta}</Button> : null} />
+      <Screen />
+    </main>
+  </React.Fragment>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script></body></html>

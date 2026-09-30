@@ -1,0 +1,33 @@
+/* JuicySuite — Spacing, radii, organic shape scale */
+:root {
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-edm: 30px;
+  --r-pill: 9999px;
+
+  --silver: 1.414; /* @kind other */
+  --shape-xs: 88px;
+  --shape-s: 124px;
+  --shape-m: 176px;
+  --shape-l: 249px;
+  --shape-xl: 352px;
+  --shape-hero: 498px;
+
+  --sidebar-width: 240px;
+  --header-height: 88px;
+}

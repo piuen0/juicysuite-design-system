@@ -1,0 +1,153 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="edm-additions" subtitle="Trimmed: 5 patterns — surfaces, pill row, split pill bar (each-side rounded), edge-to-edge composition, wordmark" --><html><head><meta charset="utf-8"><title>EDM → Design System</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { background: #FAFAFA; padding: 20px 24px; }
+  .section { background: #fff; border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow-sm); }
+  .stack { display: flex; flex-direction: column; gap: 16px; }
+  .h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .h .name { font: 700 16px var(--font-sans); color: var(--text-primary); }
+  .h .sub { font: 400 12px var(--font-mono); color: var(--text-secondary); }
+  .tag {
+    font: 600 9px var(--font-sans); letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 9999px;
+  }
+  .tag.add { background: #E8F8E8; color: #00A050; }
+  .tag.promo { background: #FFF3E0; color: #C97A1B; }
+  .swatch-row { display: flex; gap: 8px; }
+  .swatch { flex: 1; height: 64px; border-radius: 10px; position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 10px;
+            border: 1px solid var(--border-subtle); }
+  .swatch .nm { font: 600 11px var(--font-sans); color: var(--text-primary); }
+  .swatch .hx { font: 400 9px var(--font-mono); color: var(--text-secondary); margin-top: 1px; }
+  .swatch.on-color { border: none; }
+  .swatch.on-color .nm { color: #fff; } .swatch.on-color .hx { color: rgba(255,255,255,0.85); }
+  .pillrow {
+    background: #FCFBF7; border-radius: 9999px; padding: 14px 18px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .pillrow + .pillrow { margin-top: 10px; }
+  .pillrow .lbl { font: 600 14px var(--font-sans); color: #474242; }
+  .pillstat {
+    border-radius: 9999px; padding: 8px 18px;
+    font: 700 22px var(--font-sans); color: #474242; min-width: 48px; text-align: center;
+  }
+  /* split-bar: each segment is its own pill, sitting next to its sibling with a small gap */
+  .splitbar { display: flex; gap: 6px; height: 20px; }
+  .splitbar > div { height: 100%; border-radius: 9999px; }
+  .legend { font: 600 10px var(--font-sans); letter-spacing: 1px; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 16px; }
+  .code { font: 400 10px var(--font-mono); color: var(--text-secondary); padding: 6px 10px; background: var(--surface-input); border-radius: 6px; display: inline-block; }
+</style>
+</head><body>
+
+<div class="legend">Patterns from <strong style="color: var(--text-primary)">juicysuite_daily_report_edm</strong> · candidates for adoption</div>
+
+<div class="stack">
+
+  <!-- 1 · CREAM SURFACE PALETTE -->
+  <div class="section">
+    <div class="h">
+      <div><span class="name">Cream surface palette</span> <span class="sub">· warm beige surfaces for EDM / print / promo</span></div>
+      <span class="tag promo">Promo only</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background: #FFFDF6;"><div class="nm">Card</div><div class="hx">--surface-cream-card · #FFFDF6</div></div>
+      <div class="swatch" style="background: #FCFBF7;"><div class="nm">Row</div><div class="hx">--surface-cream-row · #FCFBF7</div></div>
+      <div class="swatch" style="background: #FFFFFF;"><div class="nm">Inset</div><div class="hx">#FFFFFF · pure white inset only</div></div>
+    </div>
+  </div>
+
+  <!-- 2 · PILL ROW + GRADIENT PILL STAT -->
+  <div class="section" style="background: #FFFDF6;">
+    <div class="h">
+      <div><span class="name">Pill row + gradient pill stat</span> <span class="sub">· list pattern for EDM data</span></div>
+      <span class="tag add">Add</span>
+    </div>
+
+    <div class="pillrow">
+      <div class="lbl">Not Specified</div>
+      <div class="pillstat" style="background: linear-gradient(135deg, #FFD4E5, #F6A8DD);">2</div>
+    </div>
+    <div class="pillrow">
+      <div class="lbl">Fall In Thai — Airside</div>
+      <div class="pillstat" style="background: linear-gradient(135deg, #FF8D63, #FF92B9);">44</div>
+    </div>
+    <div class="pillrow">
+      <div class="lbl">Fall In Thai — Shatin</div>
+      <div class="pillstat" style="background: linear-gradient(135deg, #2FD4C7, #DFFF37);">40</div>
+    </div>
+
+    <div class="mono" style="margin-top: 12px;">
+      Row: <span class="code">background: #FCFBF7; border-radius: 9999px; padding: 14px 18px;</span>
+      Stat: <span class="code">border-radius: 9999px; padding: 8px 18px; font: 700 22px; color: #474242;</span>
+    </div>
+  </div>
+
+  <!-- 3 · SPLIT PILL BAR -->
+  <div class="section">
+    <div class="h">
+      <div><span class="name">Split pill bar</span> <span class="sub">· each segment is its own pill — rounded on every side</span></div>
+      <span class="tag add">Add</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 380px;">
+      <div>
+        <div class="mono" style="margin-bottom: 6px;">75 : 25 · cream → yellow / teal</div>
+        <div class="splitbar">
+          <div style="width: 75%; background: linear-gradient(90deg, #FFF8D7, #FFE166);"></div>
+          <div style="width: 25%; background: #23D5C8;"></div>
+        </div>
+      </div>
+      <div>
+        <div class="mono" style="margin-bottom: 6px;">58 : 42 · lime→aqua / pink wash</div>
+        <div class="splitbar">
+          <div style="width: 58%; background: linear-gradient(90deg, #E8F51D, #23D5C8);"></div>
+          <div style="width: 42%; background: linear-gradient(90deg, #FF9BD9, #FFC0EA);"></div>
+        </div>
+      </div>
+      <div>
+        <div class="mono" style="margin-bottom: 6px;">47 : 53 · coral→pink / lime→aqua</div>
+        <div class="splitbar">
+          <div style="width: 47%; background: linear-gradient(90deg, #FF845E, #FF9BD9);"></div>
+          <div style="width: 53%; background: linear-gradient(90deg, #E8F51D, #23D5C8);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mono" style="margin-top: 12px;">Pattern: flex children with widths summing to ~100% (minus a small gap), each <span class="code">border-radius: 9999px</span> so every segment is fully pill-shaped.</div>
+  </div>
+
+  <!-- 4 · HALF-PILL COMPOSITION -->
+  <div class="section">
+    <div class="h">
+      <div><span class="name">Half-pill composition</span> <span class="sub">· decorative arrangement — shapes touch edge-to-edge</span></div>
+      <span class="tag promo">Promo only</span>
+    </div>
+
+    <div style="display: flex; gap: 0; align-items: center;">
+      <div style="width: 92px; height: 58px; background: linear-gradient(90deg, #FFFDF0, #FFE24A); border-radius: 9999px;"></div>
+      <div style="width: 44px; height: 58px; background: #2FD4C7; border-radius: 0 9999px 9999px 0;"></div>
+      <div style="width: 34px; height: 58px; background: #F5A6E7; border-radius: 0 9999px 9999px 0;"></div>
+      <div style="width: 82px; height: 82px; background: linear-gradient(180deg, #F7A6E8, #FF8C52); border-radius: 9999px;"></div>
+      <div style="width: 74px; height: 74px; background: linear-gradient(135deg, #FFE900, #2FD4C7); border-radius: 9999px;"></div>
+    </div>
+    <div class="mono" style="margin-top: 10px;">Conflicts with current marketing rule: organic Stones use silver-ratio shapes. This is a flatter, more graphic alternative — promo/EDM only.</div>
+  </div>
+
+  <!-- 5 · WORDMARK SPLIT -->
+  <div class="section">
+    <div class="h">
+      <div><span class="name">Wordmark · weight split</span> <span class="sub">· bold "Juicy" + regular "suite" for text-mode headers</span></div>
+      <span class="tag add">Add</span>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 32px;">
+      <div style="font: 700 28px var(--font-sans); color: #222;">Juicy<span style="font-weight: 400;">suite</span></div>
+      <div style="font: 700 22px var(--font-sans); color: var(--text-primary);">Juicy<span style="font-weight: 400;">suite</span></div>
+      <div style="font: 700 16px var(--font-sans); color: var(--text-primary);">Juicy<span style="font-weight: 400;">suite</span></div>
+      <div style="flex: 1; text-align: right;"><span class="code">&lt;strong&gt;Juicy&lt;/strong&gt;suite</span></div>
+    </div>
+    <div class="mono" style="margin-top: 10px;">For places where the SVG wordmark can't render (plain-text email subjects, system fonts only, etc.)</div>
+  </div>
+
+</div>
+
+</body></html>

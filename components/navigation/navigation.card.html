@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Navigation" subtitle="Sunset sidebar + page header" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Navigation</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}.cap{font:600 10px var(--font-sans);letter-spacing:1px;text-transform:uppercase;color:var(--text-secondary);}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const J = window.JS; const C = ({children}) => <div className="cap">{children}</div>;
+const Row = ({children, gap=12, style}) => <div style={{display:"flex",alignItems:"center",gap,flexWrap:"wrap",...style}}>{children}</div>;
+
+const { Sidebar, TopHeader, Button } = J;
+function Demo(){ const [p,setP]=React.useState("dashboard");
+  return <div style={{display:"flex",height:380,margin:"-20px -24px",overflow:"hidden"}}>
+    <Sidebar active={p} onNav={setP} style={{height:380,position:"relative"}} />
+    <div style={{flex:1,minWidth:0}}><TopHeader title="Dashboard" subtitle="Your loyalty program at a glance" actions={<Button icon="plus" size="sm">Add</Button>} /></div>
+  </div>; }
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+
+</script></body></html>

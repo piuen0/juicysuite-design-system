@@ -1,0 +1,21 @@
+/* JuicySuite — Base + semantic type classes */
+html, body { background: var(--surface-page); }
+body { font-family: var(--font-sans); color: var(--text-primary); font-size: var(--fs-body); font-weight: var(--w-regular); line-height: var(--lh-relax); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+::selection { background: rgba(247,96,122,0.25); color: var(--text-primary); }
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.t-page { font-family: var(--font-sans); font-size: var(--fs-page); font-weight: var(--w-heavy); line-height: var(--lh-snug); letter-spacing: -0.5px; color: var(--text-primary); }
+.t-page-sub { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-secondary); }
+.t-section { font-family: var(--font-sans); font-size: var(--fs-section); font-weight: var(--w-heavy); line-height: var(--lh-cozy); color: var(--text-primary); }
+.t-card-title { font-family: var(--font-sans); font-size: var(--fs-card-title); font-weight: var(--w-semi); line-height: var(--lh-base); color: var(--text-primary); }
+.t-stat { font-family: var(--font-sans); font-size: var(--fs-kpi); font-weight: var(--w-heavy); line-height: var(--lh-tight); letter-spacing: -0.5px; color: var(--text-primary); }
+.t-stat-label { font-family: var(--font-sans); font-size: var(--fs-meta); font-weight: var(--w-medium); line-height: var(--lh-cozy); color: var(--text-secondary); }
+.t-body { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-relax); color: var(--text-primary); }
+.t-meta { font-family: var(--font-sans); font-size: var(--fs-small); line-height: var(--lh-body); color: var(--text-secondary); }
+.t-caption { font-family: var(--font-sans); font-size: var(--fs-caption); font-weight: var(--w-semi); line-height: var(--lh-cozy); letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); }
+.t-nav { font-family: var(--font-sans); font-size: var(--fs-body); font-weight: var(--w-medium); line-height: var(--lh-base); }
+.t-button { font-family: var(--font-sans); font-size: var(--fs-body); font-weight: var(--w-semi); line-height: var(--lh-base); }
+.t-link { font-family: var(--font-sans); font-size: var(--fs-link); font-weight: var(--w-medium); line-height: var(--lh-base); color: var(--text-link); cursor: pointer; }
+.t-link:hover { text-decoration: underline; }
+.t-mono { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--text-secondary); }

@@ -1,0 +1,422 @@
+/* ============================================================
+   JuicySuite — Colors & Type
+   Single source of truth for tokens + semantic typography.
+   Import from any artifact:
+     <link rel="stylesheet" href="colors_and_type.css">
+   ============================================================ */
+
+/* --- Webfonts -----------------------------------------------
+   JuicySuite uses Montserrat across the entire UI (loaded locally
+   from ./fonts/) and JetBrains Mono only for identifiers (Google Fonts).
+   Path is RELATIVE to this CSS file — works from project root or any
+   subdirectory as long as fonts/ stays beside it.
+*/
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("fonts/Montserrat-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("fonts/Montserrat-ThinItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("fonts/Montserrat-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("fonts/Montserrat-ExtraLightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/Montserrat-LightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Montserrat-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Montserrat-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Montserrat-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Montserrat-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/Montserrat-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/Montserrat-ExtraBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/Montserrat-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/Montserrat-BlackItalic.ttf") format("truetype");
+}
+
+:root {
+  /* ----------- COLOR · Surfaces ------------ */
+  --surface-page:      #FAFAFA;  /* cool gray — page canvas, never white */
+  --surface-card:      #FFFFFF;  /* the only place content lives */
+  --surface-hover:     #FFF5F0;  /* warm cream — row hover, soft highlight */
+  --surface-input:     #F7F8FC;  /* slightly recessed cool tint for inputs */
+
+  /* ----------- COLOR · Brand gradients (50° fixed) ----- */
+  --gradient-sunset:   linear-gradient(50deg, #FF761A 0%, #FF7D36 13%, #FFABE7 100%); /* @kind color */
+  --gradient-mist:     linear-gradient(50deg, #5DDBC8 0%, #C5A4D9 50%, #F4A6D0 100%); /* @kind color */
+  --gradient-meadow:   linear-gradient(50deg, #FEE516 0%, #FCE518 32%, #F4E51F 47%, #E8E52B 58%, #D5E53C 67%, #BEE553 75%, #A1E56E 83%, #7EE48F 89%, #57E4B4 96%, #37E4D2 100%); /* @kind color */
+
+  /* Sunset is the SaaS UI default — sidebar + primary CTA only.
+     Mist / Meadow are for marketing, ads, promotional surfaces. */
+  --gradient-primary:  var(--gradient-sunset); /* @kind color */
+  --gradient-sidebar:  var(--gradient-sunset); /* @kind color */
+
+  /* ----------- COLOR · Accents & solids ---- */
+  --accent-primary:    #F7607A;  /* coral pink — links, focus rings */
+  --accent-secondary:  #FF761A;  /* warm orange — Sunset dominant */
+  --accent-green:      #4CD964;  /* toggle on, positive */
+
+  /* ----------- COLOR · Text ---------------- */
+  --text-primary:      #5E555A;  /* warm muted plum-gray — NEVER #000 */
+  --text-secondary:    #7F8C8D;  /* metadata, axis, labels */
+  --text-disabled:     #BDC3C7;  /* placeholders, disabled */
+  --text-on-gradient:  #FFFFFF;  /* sidebar, primary CTA */
+  --text-link:         #F7607A;  /* "Edit", "Show More" inline actions */
+
+  /* ----------- COLOR · Semantic ------------ */
+  --status-success:    #00CE73;  /* "Activated", ▲ positive */
+  --status-error:      #FF5C4C;  /* "Unactivated", ▼ negative */
+  --status-warning:    #FFDA2B;  /* paused */
+  --status-info:       #37E4D2;  /* sparingly */
+  --status-vip:        #8E44AD;  /* premium */
+
+  /* Badge backgrounds (pastel) */
+  --bg-success:        #E8F8E8;
+  --bg-error:          #FDE8E8;
+  --bg-warning:        #FFF3E0;
+  --bg-info:           #E3F2FD;
+  --bg-vip:            #F0E6FF;
+  --bg-neutral:        #F0F2F7;
+
+  /* KPI icon backgrounds (warm pastels) */
+  --bg-kpi-orange:     #FFF0E6;
+  --bg-kpi-coral:      #FFE6E6;
+  --bg-kpi-green:      #E6F9E6;
+  --bg-kpi-purple:     #F0E6FF;
+
+  /* ----------- COLOR · Borders ------------- */
+  --border-default:    #E8ECF1;
+  --border-subtle:     #F0F2F7;
+  --border-focus:      #F7607A;  /* brand pulls into the form */
+
+  /* ----------- COLOR · Extended palette (charts/tags only) ----- */
+  --c-green:           #00CE73;
+  --c-teal:            #37E4D2;
+  --c-coral:           #FF5C4C;
+  --c-pink:            #FFABE7;
+  --c-orange:          #FF761A;
+  --c-yellow:          #FFDA2B;
+  --c-purple:          #904AA8;
+  --c-neutral-dark:    #685E64;
+  --c-magenta:         #FF3171;
+
+  /* ----------- TYPE · Families ------------- */
+  --font-sans:  "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:  "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  /* ----------- TYPE · Weights -------------- */
+  --w-regular:  400; /* @kind font */ /* body, descriptions */
+  --w-medium:   500; /* @kind font */ /* nav, KPI labels */
+  --w-semi:     600; /* @kind font */ /* card titles, captions, button labels */
+  --w-bold:     700; /* @kind font */ /* sidebar wordmark */
+  --w-heavy:    800; /* @kind font */ /* page titles, section titles, KPI stats */
+
+  /* ----------- TYPE · Sizes (px) ----------- */
+  --fs-caption:    10px;
+  --fs-meta:       11px;
+  --fs-small:      12px;
+  --fs-link:       13px;
+  --fs-body:       14px;
+  --fs-card-title: 15px;
+  --fs-section:    22px;
+  --fs-kpi:        28px;
+  --fs-page:       34px;
+  --fs-hero:       48px;
+
+  /* ----------- TYPE · Line heights --------- */
+  --lh-tight:  1.10; /* @kind font */ /* KPI stat */
+  --lh-snug:   1.20; /* @kind font */ /* page title */
+  --lh-cozy:   1.30; /* @kind font */ /* section title, caption */
+  --lh-base:   1.40; /* @kind font */ /* card title, button, nav */
+  --lh-body:   1.50; /* @kind font */
+  --lh-relax:  1.55; /* @kind font */ /* default body */
+
+  /* ----------- SHAPE · Radii --------------- */
+  --r-xs:    4px;    /* calendar day cells */
+  --r-sm:    6px;    /* inline tags */
+  --r-md:    8px;    /* inputs, dropdowns, sidebar nav */
+  --r-lg:    12px;   /* KPI, chart, tutorial banners */
+  --r-xl:    16px;   /* standard content cards */
+  --r-2xl:   20px;   /* sidebar (right corners only), modals */
+  --r-pill:  9999px; /* buttons, badges, search bars, toggles */
+
+  /* ----------- SHAPE · Spacing scale (4px base) -- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* ----------- DEPTH · Shadows ------------- */
+  --shadow-xs:       0 1px 3px  rgba(0,0,0,0.04);   /* L1 — KPI cards, badges */
+  --shadow-sm:       0 2px 8px  rgba(0,0,0,0.06);   /* L2 — content card default */
+  --shadow-md:       0 4px 16px rgba(0,0,0,0.08);   /* L3 — card hover, dropdowns */
+  --shadow-lg:       0 8px 24px rgba(0,0,0,0.10);   /* L4 — modal, popover */
+  --shadow-cta:      0 4px 12px rgba(255,118,26,0.30); /* primary CTA — orange glow */
+  --shadow-sidebar:  4px 0 20px rgba(255,118,26,0.15); /* sidebar right-edge spill */
+
+  /* ----------- ORGANIC SHAPES · Silver ratio scale -- */
+  --silver:      1.414; /* @kind other */
+  --shape-xs:    88px;
+  --shape-s:     124px;
+  --shape-m:     176px;
+  --shape-l:     249px;
+  --shape-xl:    352px;
+  --shape-hero:  498px;
+}
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html, body { background: var(--surface-page); }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-relax);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: rgba(247,96,122,0.25); color: var(--text-primary); }
+
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY
+   Use these classes directly OR mirror them on real elements.
+   ============================================================ */
+
+/* Page title — only used in top header area */
+.t-page,
+h1.t-page {
+  font-family: var(--font-sans);
+  font-size: var(--fs-page);
+  font-weight: var(--w-heavy);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+/* Page subtitle — sits directly below page title */
+.t-page-sub {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-body);
+  color: var(--text-secondary);
+}
+
+/* Section title */
+.t-section,
+h2.t-section {
+  font-family: var(--font-sans);
+  font-size: var(--fs-section);
+  font-weight: var(--w-heavy);
+  line-height: var(--lh-cozy);
+  color: var(--text-primary);
+}
+
+/* Card title */
+.t-card-title,
+h3.t-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-card-title);
+  font-weight: var(--w-semi);
+  line-height: var(--lh-base);
+  color: var(--text-primary);
+}
+
+/* KPI stat value (paired with .t-stat-label below it) */
+.t-stat {
+  font-family: var(--font-sans);
+  font-size: var(--fs-kpi);
+  font-weight: var(--w-heavy);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+.t-stat-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-cozy);
+  color: var(--text-secondary);
+}
+
+/* Default body */
+.t-body, p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-relax);
+  color: var(--text-primary);
+}
+
+/* Small / meta — timestamps, IDs, table cells */
+.t-meta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-body);
+  color: var(--text-secondary);
+}
+
+/* ALL-CAPS caption — the ONLY place letter-spacing is used */
+.t-caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: var(--w-semi);
+  line-height: var(--lh-cozy);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Sidebar / horizontal nav item */
+.t-nav {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-base);
+  color: var(--text-primary);
+}
+
+/* Button label */
+.t-button {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--w-semi);
+  line-height: var(--lh-base);
+}
+
+/* Inline text action link */
+.t-link {
+  font-family: var(--font-sans);
+  font-size: var(--fs-link);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-base);
+  color: var(--text-link);
+  cursor: pointer;
+}
+.t-link:hover { text-decoration: underline; }
+
+/* Monospace for identifiers only */
+.t-mono, code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+}

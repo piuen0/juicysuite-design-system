@@ -1,0 +1,40 @@
+<!-- @dsCard group="Brand" name="Backgrounds — Solid" subtitle="3 neutrals + the 50/35/15 brand solids" viewport="700x300" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Solid Backgrounds</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  html, body { background: #FFFFFF; padding: 16px 18px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .bg {
+    aspect-ratio: 2.6 / 1;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .bg .meta { line-height: 1.25; }
+  .bg .nm { font: 700 12px var(--font-sans); }
+  .bg .hex { font: 400 10px var(--font-mono); opacity: 0.85; margin-top: 2px; }
+  .bg.dark .nm, .bg.dark .hex { color: #fff; }
+  .bg.light .nm { color: var(--text-primary); }
+  .bg.light .hex { color: var(--text-secondary); }
+  .legend { font: 600 10px var(--font-sans); letter-spacing: 1px; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 12px; }
+</style>
+</head><body>
+<div class="legend">Solid backgrounds · full-bleed section fills</div>
+<div class="grid">
+  <div class="bg light" style="background: #FFFFFF; border-color: #E8ECF1;"><div class="meta"><div class="nm">Pure</div><div class="hex">#FFFFFF</div></div></div>
+  <div class="bg light" style="background: #FAFAFA;"><div class="meta"><div class="nm">Page</div><div class="hex">#FAFAFA</div></div></div>
+  <div class="bg light" style="background: #FFF8F2;"><div class="meta"><div class="nm">Cream</div><div class="hex">#FFF8F2</div></div></div>
+
+  <div class="bg dark" style="background: #FF761A;"><div class="meta"><div class="nm">Orange</div><div class="hex">#FF761A</div></div></div>
+  <div class="bg dark" style="background: #00CE73;"><div class="meta"><div class="nm">Green</div><div class="hex">#00CE73</div></div></div>
+  <div class="bg dark" style="background: #FF5C4C;"><div class="meta"><div class="nm">Coral</div><div class="hex">#FF5C4C</div></div></div>
+  <div class="bg light" style="background: #FFDA2C;"><div class="meta"><div class="nm">Yellow</div><div class="hex">#FFDA2C</div></div></div>
+  <div class="bg light" style="background: #FFABE7;"><div class="meta"><div class="nm">Pink</div><div class="hex">#FFABE7</div></div></div>
+  <div class="bg dark" style="background: #904AA8;"><div class="meta"><div class="nm">Purple</div><div class="hex">#904AA8</div></div></div>
+</div>
+</body></html>

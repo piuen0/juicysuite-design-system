@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Inputs" subtitle="Standard · pill search · focus = coral border" viewport="700x130" --><html><head><meta charset="utf-8"><title>Inputs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+.label { display: block; font: 600 12px var(--font-sans); color: var(--text-primary); margin-bottom: 6px; }
+.input { background: #fff; border: 1px solid var(--border-default); border-radius: 8px; height: 40px; padding: 0 14px; font: 400 14px var(--font-sans); color: var(--text-primary); outline: none; width: 100%; box-sizing: border-box; }
+.input:focus, .input.focus { border-color: var(--accent-primary); }
+.input::placeholder { color: var(--text-disabled); }
+.search { background: var(--surface-input); border-radius: 9999px; border: 1px solid var(--border-default); height: 40px; padding: 0 16px 0 38px; font: 400 14px var(--font-sans); width: 100%; outline: none; box-sizing: border-box;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237F8C8D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+  background-repeat: no-repeat; background-position: 12px center; }
+</style></head><body>
+<div class="row" style="gap: 16px; align-items: flex-start;">
+  <div style="flex: 1;">
+    <label class="label">Campaign Name</label>
+    <input class="input" value="Spring Birthday Bonus" />
+  </div>
+  <div style="flex: 1;">
+    <label class="label">Search</label>
+    <input class="search" placeholder="Search members…" />
+  </div>
+  <div style="flex: 1;">
+    <label class="label">Reward Points</label>
+    <input class="input focus" value="500" />
+    <div class="mono" style="margin-top: 4px;">focus = coral border</div>
+  </div>
+</div>
+</body></html>

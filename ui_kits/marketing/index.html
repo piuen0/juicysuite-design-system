@@ -1,0 +1,36 @@
+<!-- @dsCard group="Marketing" viewport="1440x1000" name="Marketing Surfaces" subtitle="Gradient fields · frame-break & knockout posters · tier cards · feature banner" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>JuicySuite — Marketing Surfaces</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}body{padding:56px 64px;}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel" src="Compositions.jsx"></script>
+<script type="text/babel">
+const { GradientDefs } = window.JS;
+const { FieldSpread, FrameBreakPoster, KnockoutPoster, TierCard, FeatureBanner } = window.JSM;
+const H = ({ title, sub }) => <div style={{ marginBottom: 24 }}><h2 style={{ fontSize: 22, fontWeight: 800, margin: "0 0 6px", letterSpacing: "-0.3px" }}>{title}</h2><p style={{ fontSize: 14, color: "var(--text-secondary)", margin: 0, maxWidth: 640, lineHeight: 1.55 }}>{sub}</p></div>;
+function Page() {
+  return <div>
+    <GradientDefs />
+    <header style={{ marginBottom: 56, maxWidth: 720 }}>
+      <div className="t-caption" style={{ color: "var(--accent-primary)", marginBottom: 14 }}>Marketing UI kit</div>
+      <h1 style={{ fontSize: 48, fontWeight: 800, letterSpacing: "-1px", lineHeight: 1.05, margin: "0 0 12px" }}>Shapes, not screens.</h1>
+      <p style={{ fontSize: 17, color: "var(--text-secondary)", lineHeight: 1.55, margin: 0 }}>Organic silhouettes filled with the three 50° brand gradients carry the brand across ads, posters, social and hero shots. Never inside the product UI.</p>
+    </header>
+    <section style={{ marginBottom: 72 }} data-screen-label="01 Gradient Fields"><H title="Gradient field · Corner bleed" sub="Full-bleed gradient fields, one oversized blob, a centred white wordmark. The pair reads as a spread — covers, event screens, social." /><FieldSpread /></section>
+    <section style={{ marginBottom: 72 }} data-screen-label="02 Frame Break"><H title="Frame break — campaign posters" sub="A thick pink or orange frame on white; a gradient slab breaks out of it. Display type in the frame colour crosses the slab edge." />
+      <div style={{ background: "#fff", borderRadius: 20, padding: "32px 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}><FrameBreakPoster tone="grape" /><FrameBreakPoster tone="blush" /></div></section>
+    <section style={{ marginBottom: 72 }} data-screen-label="03 Knockout Stack"><H title="Knockout stack — tall posters" sub="White knockouts stacked on a Blush field — squircle over cushion, a pebble tucked right. Pink display type bridges the gap." />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "end", maxWidth: 1000 }}><KnockoutPoster /><KnockoutPoster /></div></section>
+    <section style={{ marginBottom: 64 }} data-screen-label="04 Tier Cards"><H title="Tier cards" sub="Each tier owns one 50 / 35 / 15 colour set — dominant cushion, support pebble, accent pill." />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}><TierCard kind="New" /><TierCard kind="Standard" /><TierCard kind="VIP" /></div></section>
+    <section data-screen-label="05 Feature Banner"><H title="Feature banner — frame break, landscape" sub="The frame-break pattern at 2.5:1 for email headers, blog covers and launch notes. Pink display type rides the Grape slab; copy and CTA sit in the white of the frame." /><FeatureBanner /></section>
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Page />);
+</script></body></html>

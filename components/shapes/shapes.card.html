@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Shapes" subtitle="Stones, geometrics + traced Blob family — marketing only" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Shapes</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}.cap{font:600 10px var(--font-sans);letter-spacing:1px;text-transform:uppercase;color:var(--text-secondary);}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const J = window.JS; const C = ({children}) => <div className="cap">{children}</div>;
+const Row = ({children, gap=12, style}) => <div style={{display:"flex",alignItems:"center",gap,flexWrap:"wrap",...style}}>{children}</div>;
+
+const { Blob } = J;
+const { GradientDefs, Marble, DropTall, DropShort, Ellipse, StoneRound, StoneTilt, StoneWide, StoneBloom } = J;
+const L = ({n,children}) => <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:8}}>{children}<C>{n}</C></div>;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <div><GradientDefs />
+  <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",gap:10}}>
+    <L n="Marble"><Marble size={72} /></L><L n="Drop tall"><DropTall width={40} grad="mist" /></L><L n="Drop short"><DropShort width={60} grad="meadow" /></L><L n="Ellipse"><Ellipse width={100} grad="mist" /></L>
+    <L n="Round"><StoneRound size={92} /></L><L n="Tilt"><StoneTilt size={64} grad="mist" /></L><L n="Wide"><StoneWide width={110} grad="meadow" /></L><L n="Bloom"><StoneBloom size={84} /></L>
+  </div>
+  {Blob ? <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",gap:10,marginTop:24}}>
+    <L n="Blob · bloom"><Blob shape="bloom" width={80} gradient="sunsetFlat" /></L><L n="Blob · slab"><Blob shape="slab" width={66} gradient="grape" /></L><L n="Blob · slab tilt"><Blob shape="slabTilt" width={70} gradient="blush" /></L><L n="Blob · squircle"><Blob shape="squircle" width={96} gradient="blush" /></L><L n="Blob · cushion"><Blob shape="cushion" width={60} gradient="blush" /></L><L n="Blob · pebble"><Blob shape="pebble" width={52} gradient="blush" /></L>
+  </div> : null}</div>);
+
+</script></body></html>

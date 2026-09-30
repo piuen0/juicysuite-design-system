@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x230" name="Forms" subtitle="Toggle · input (default / focus) · search · pill tabs · segmented range" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Forms</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}.cap{font:600 10px var(--font-sans);letter-spacing:1px;text-transform:uppercase;color:var(--text-secondary);}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const J = window.JS; const C = ({children}) => <div className="cap">{children}</div>;
+const Row = ({children, gap=12, style}) => <div style={{display:"flex",alignItems:"center",gap,flexWrap:"wrap",...style}}>{children}</div>;
+
+const { Toggle, Input, SearchInput, PillTabs, SegmentedPills } = J;
+function Demo(){ const [a,setA]=React.useState(true); const [b,setB]=React.useState(false); const [t,setT]=React.useState("all"); const [r,setR]=React.useState("90D");
+  return <div style={{display:"flex",flexDirection:"column",gap:16}}>
+    <Row gap={16}><Toggle checked={a} onChange={setA} /><Toggle checked={b} onChange={setB} /><Toggle checked disabled /><SegmentedPills options={["30D","90D"]} value={r} onChange={setR} /></Row>
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12}}><Input placeholder="Campaign name" /><Input defaultValue="Spring Birthday Bonus" style={{borderColor:"var(--border-focus)"}} /><SearchInput placeholder="Search members…" /></div>
+    <div style={{background:"#fff",borderRadius:16,padding:14,boxShadow:"var(--shadow-sm)"}}><PillTabs value={t} onChange={setT} tabs={[{id:"all",label:"All members",count:12438},{id:"activated",label:"Activated",count:9120},{id:"vip",label:"VIP",count:482},{id:"unactivated",label:"Unactivated",count:2836}]} /></div>
+  </div>; }
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+
+</script></body></html>

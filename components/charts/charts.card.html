@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Charts" subtitle="Area line · weekday bars · tier donut" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Charts</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;background:var(--surface-page);}body{padding:20px 24px;font-family:var(--font-sans);color:var(--text-primary);}.cap{font:600 10px var(--font-sans);letter-spacing:1px;text-transform:uppercase;color:var(--text-secondary);}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.JS=window.JuicySuiteDesignSystem_ab5a71||{};</script>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const J = window.JS; const C = ({children}) => <div className="cap">{children}</div>;
+const Row = ({children, gap=12, style}) => <div style={{display:"flex",alignItems:"center",gap,flexWrap:"wrap",...style}}>{children}</div>;
+
+const { MiniChart, BarChart, Donut, DonutLegend, Card } = J;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <div style={{display:"grid",gridTemplateColumns:"1.3fr 1fr 1.2fr",gap:12}}>
+    <Card padding={16} radius={12}><C>Member growth</C><div style={{height:10}}></div><MiniChart data={[110,100,105,88,75,80,60,50,35,25,20]} height={150} /></Card>
+    <Card padding={16} radius={12}><C>By weekday</C><div style={{height:10}}></div><BarChart height={150} /></Card>
+    <Card padding={16} radius={12}><div style={{display:"flex",alignItems:"center",gap:14}}><Donut size={150} center={{value:"12.4K",label:"Total"}} /><DonutLegend /></div></Card>
+  </div>);
+
+</script></body></html>

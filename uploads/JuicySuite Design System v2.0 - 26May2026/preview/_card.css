@@ -1,0 +1,57 @@
+/* Shared card-frame styles for Design System tab previews.
+   Each preview HTML imports colors_and_type.css + this file. */
+
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  background: var(--surface-page);
+}
+body {
+  padding: 20px 24px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+.row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+.between { display: flex; align-items: center; justify-content: space-between; }
+.mono { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
+.cap  {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Surface tile — a labelled rectangle showing a color/surface */
+.tile {
+  flex: 1;
+  min-width: 0;
+  height: 92px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+.tile .name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.tile .hex {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.tile.on-color { border: none; }
+.tile.on-color .name { color: #fff; }
+.tile.on-color .hex  { color: rgba(255,255,255,0.85); }

@@ -1,0 +1,95 @@
+/* JuicySuite — Color tokens */
+:root {
+  /* Surfaces */
+  --surface-page:  #FAFAFA; /* cool gray page canvas — never white */
+  --surface-card:  #FFFFFF; /* the only place content lives */
+  --surface-hover: #FFF5F0; /* warm cream — row hover, secondary hover */
+  --surface-input: #F7F8FC; /* recessed cool tint — search, segmented */
+  --surface-cream: #FFF8F2; /* marketing canvas */
+
+  /* EDM / promo cream surfaces */
+  --surface-edm-page: #F5F3EE;
+  --surface-cream-card: #FFFDF6;
+  --surface-cream-row:  #FCFBF7;
+
+  /* Brand gradients — 50° fixed, copy stops exactly */
+  --gradient-sunset: linear-gradient(50deg, #FF761A 0%, #FF7D36 13%, #FFABE7 100%); /* @kind color */
+  --gradient-mist:   linear-gradient(50deg, #5DDBC8 0%, #C5A4D9 50%, #F4A6D0 100%); /* @kind color */
+  --gradient-meadow: linear-gradient(50deg, #FEE516 0%, #FCE518 32%, #F4E51F 47%, #E8E52B 58%, #D5E53C 67%, #BEE553 75%, #A1E56E 83%, #7EE48F 89%, #57E4B4 96%, #37E4D2 100%); /* @kind color */
+  --gradient-primary: var(--gradient-sunset); /* @kind color */
+  --gradient-sidebar: var(--gradient-sunset); /* @kind color */
+
+  /* Marketing field & blob gradients — from 2026 poster / field references (assets/reference/) */
+  --gradient-meadow-field: linear-gradient(35deg, #3BE3D2 0%, #86E08A 14%, #C4DF5A 35%, #E8DC40 60%, #FFDB2E 100%); /* @kind color */
+  --gradient-sunset-flat: linear-gradient(90deg, #FF7420 0%, #FF9084 45%, #FFA8E6 100%); /* @kind color */
+  --gradient-corner-field: radial-gradient(ellipse 125% 78% at 0% 100%, #FF5A0A 0%, rgba(222,112,48,0.88) 14%, rgba(170,150,100,0.6) 32%, rgba(110,195,165,0.3) 55%, rgba(59,227,210,0) 80%), linear-gradient(180deg, #3BE3D2 0%, #3BE3D2 50%, #55D3BC 100%); /* @kind color */
+  --gradient-grape: linear-gradient(40deg, #00CE73 0%, #0CC27A 38%, #2E8FA8 62%, #4F5FD6 82%, #6B2BF0 100%); /* @kind color */
+  --gradient-blush: linear-gradient(25deg, #FFABE7 0%, #F4AEE6 35%, #CBBBE3 60%, #9FCADF 80%, #3BE3D2 100%); /* @kind color */
+  --c-display-pink: #FFABE7;
+
+  /* Neutral background washes */
+  --gradient-cream-wash: linear-gradient(180deg, #FFFFFF 0%, #FFF5F0 100%); /* @kind color */
+  --gradient-orange-corner: radial-gradient(ellipse 75% 90% at 0% 100%, rgba(255,118,26,0.55) 0%, rgba(255,118,26,0) 65%), #FFFFFF; /* @kind color */
+
+  /* EDM gradients — 135° / 90°, small pill elements only */
+  --gradient-edm-pink:   linear-gradient(135deg, #FFD4E5, #F6A8DD); /* @kind color */
+  --gradient-edm-coral:  linear-gradient(135deg, #FF8D63, #FF92B9); /* @kind color */
+  --gradient-edm-aqua:   linear-gradient(135deg, #2FD4C7, #DFFF37); /* @kind color */
+  --gradient-edm-lime:   linear-gradient(90deg, #E8F51D, #23D5C8); /* @kind color */
+  --gradient-edm-butter: linear-gradient(90deg, #FFF8D7, #FFE166); /* @kind color */
+  --gradient-edm-blush:  linear-gradient(90deg, #FF9BD9, #FFC0EA); /* @kind color */
+  --gradient-edm-peach:  linear-gradient(90deg, #FF845E, #FF9BD9); /* @kind color */
+
+  /* Accents */
+  --accent-primary:   #F7607A; /* coral — links, focus */
+  --accent-secondary: #FF761A; /* Sunset orange */
+  --accent-green:     #4CD964; /* toggle on */
+
+  /* Text */
+  --text-primary:     #5E555A; /* warm plum-gray — NEVER #000 */
+  --text-secondary:   #7F8C8D;
+  --text-disabled:    #BDC3C7;
+  --text-on-gradient: #FFFFFF;
+  --text-link:        #F7607A;
+  --text-edm:         #474242; /* EDM ink */
+  --text-edm-muted:   #7A7469;
+
+  /* Semantic */
+  --status-success: #00CE73;
+  --status-error:   #FF5C4C;
+  --status-warning: #FFDA2B;
+  --status-warning-text: #B58400;
+  --status-info:    #37E4D2;
+  --status-info-text: #1FB5A4;
+  --status-vip:     #8E44AD;
+
+  --bg-success: #E8F8E8;
+  --bg-error:   #FDE8E8;
+  --bg-warning: #FFF3E0;
+  --bg-info:    #E3F2FD;
+  --bg-vip:     #F0E6FF;
+  --bg-neutral: #F0F2F7;
+
+  /* KPI icon pastels */
+  --bg-kpi-orange: #FFF0E6;
+  --bg-kpi-coral:  #FFE6E6;
+  --bg-kpi-green:  #E6F9E6;
+  --bg-kpi-purple: #F0E6FF;
+
+  /* Borders */
+  --border-default: #E8ECF1;
+  --border-subtle:  #F0F2F7;
+  --border-focus:   #F7607A;
+  --toggle-off:     #E0E0E0;
+
+  /* Extended palette — charts / tags only */
+  --c-green: #00CE73;
+  --c-teal: #37E4D2;
+  --c-coral: #FF5C4C;
+  --c-pink: #FFABE7;
+  --c-orange: #FF761A;
+  --c-yellow: #FFDA2B;
+  --c-purple: #904AA8;
+  --c-neutral-dark: #685E64;
+  --c-magenta: #FF3171;
+}

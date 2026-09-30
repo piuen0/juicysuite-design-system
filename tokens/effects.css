@@ -1,0 +1,15 @@
+/* JuicySuite — Elevation & motion */
+:root {
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
+  --shadow-cta: 0 4px 12px rgba(255,118,26,0.30);
+  --shadow-cta-hover: 0 6px 16px rgba(255,118,26,0.40);
+  --shadow-sidebar: 4px 0 20px rgba(255,118,26,0.15);
+
+  --ease-standard: ease; /* @kind other */
+  --ease-out: ease-out; /* @kind other */
+  --dur-fast: 150ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+}

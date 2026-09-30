@@ -1,0 +1,78 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Chart Style" subtitle="Orange stroke, gradient area, horizontal grid only" viewport="700x220" --><html><head><meta charset="utf-8"><title>Chart Style</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 16px 20px; }
+  .stage { display: flex; justify-content: center; }
+  svg { width: 100%; max-width: 660px; height: auto; display: block; }
+</style>
+</head><body>
+<div class="stage">
+  <!-- Entire specimen rendered as a single SVG vector — card chrome, title, grid, area, line, markers, axis. -->
+  <svg viewBox="0 0 660 280" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat, system-ui, sans-serif">
+    <defs>
+      <!-- Card drop shadow -->
+      <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="120%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+        <feOffset dy="2" />
+        <feComponentTransfer><feFuncA type="linear" slope="0.18" /></feComponentTransfer>
+        <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <!-- Area fill — orange fade to transparent -->
+      <linearGradient id="areaFade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"  stop-color="#FF761A" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#FF761A" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+
+    <!-- CARD SURFACE -->
+    <rect x="8" y="8" width="644" height="264" rx="16" fill="#FFFFFF" filter="url(#cardShadow)" />
+
+    <!-- HEADER -->
+    <text x="32" y="46" font-size="15" font-weight="600" fill="#5E555A">Member Growth</text>
+    <text x="624" y="44" font-size="10" font-weight="600" letter-spacing="1" fill="#7F8C8D" text-anchor="end">LAST 30 DAYS</text>
+
+    <!-- PLOT AREA (inside card padding) -->
+    <g transform="translate(32 72)">
+      <!-- GRID LINES — horizontal only, #F0F2F7 -->
+      <line x1="0" y1="0"   x2="596" y2="0"   stroke="#F0F2F7" />
+      <line x1="0" y1="48"  x2="596" y2="48"  stroke="#F0F2F7" />
+      <line x1="0" y1="96"  x2="596" y2="96"  stroke="#F0F2F7" />
+      <line x1="0" y1="144" x2="596" y2="144" stroke="#F0F2F7" />
+
+      <!-- AREA fill under the line -->
+      <path d="M 0,128 L 74,108 L 149,112 L 223,84 L 298,68 L 372,74 L 447,46 L 521,32 L 596,12 L 596,144 L 0,144 Z" fill="url(#areaFade)" />
+
+      <!-- LINE — 2.5px stroke, #FF761A -->
+      <path d="M 0,128 L 74,108 L 149,112 L 223,84 L 298,68 L 372,74 L 447,46 L 521,32 L 596,12"
+            stroke="#FF761A" stroke-width="2.5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- DOT MARKERS — white fill, orange ring -->
+      <circle cx="298" cy="68" r="4.5" fill="#fff" stroke="#FF761A" stroke-width="2" />
+      <circle cx="447" cy="46" r="4.5" fill="#fff" stroke="#FF761A" stroke-width="2" />
+      <circle cx="596" cy="12" r="5"   fill="#fff" stroke="#FF761A" stroke-width="2.5" />
+
+      <!-- ENDPOINT TOOLTIP -->
+      <g transform="translate(540 -24)">
+        <rect x="0" y="0" width="64" height="28" rx="8" fill="#FFFFFF" filter="url(#cardShadow)" />
+        <text x="32" y="18" font-size="11" font-weight="700" fill="#5E555A" text-anchor="middle">12,438</text>
+      </g>
+
+      <!-- X-AXIS labels -->
+      <text x="0"   y="166" font-size="11" fill="#7F8C8D">May 1</text>
+      <text x="200" y="166" font-size="11" fill="#7F8C8D" text-anchor="middle">May 10</text>
+      <text x="400" y="166" font-size="11" fill="#7F8C8D" text-anchor="middle">May 20</text>
+      <text x="596" y="166" font-size="11" fill="#7F8C8D" text-anchor="end">May 30</text>
+    </g>
+
+    <!-- LEGEND / META -->
+    <g transform="translate(32 232)">
+      <circle cx="6" cy="6" r="4" fill="#FF761A" />
+      <text x="18" y="10" font-size="11" font-weight="500" fill="#5E555A">Active members</text>
+
+      <text x="596" y="10" font-size="11" font-weight="600" fill="#00CE73" text-anchor="end">▲ 12.4% vs last 30d</text>
+    </g>
+  </svg>
+</div>
+</body></html>

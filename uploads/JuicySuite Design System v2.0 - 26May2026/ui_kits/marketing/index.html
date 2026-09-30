@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Marketing" name="JuicySuite Marketing" subtitle="Solo · Duo · Stack compositions · tier cards · feature banner" viewport="1440x1000" -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JuicySuite — Marketing Surfaces</title>
+  <link rel="stylesheet" href="../../colors_and_type.css" />
+  <style>
+    html, body { margin: 0; background: var(--surface-page); }
+    body { padding: 56px 64px; font-family: var(--font-sans); color: var(--text-primary); }
+    .group { margin-bottom: 64px; }
+    .group h2 { font: 800 22px Montserrat; letter-spacing: -0.3px; margin: 0 0 6px; }
+    .group .sub { font: 400 14px Montserrat; color: var(--text-secondary); margin: 0 0 24px; max-width: 640px; line-height: 1.55; }
+    .cap { font: 600 10px Montserrat; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-primary); margin: 0 0 14px; }
+
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header style="margin-bottom: 56px; max-width: 720px;">
+    <div class="cap" data-screen-label="00 Header">Marketing UI Kit</div>
+    <h1 style="font: 800 48px Montserrat; letter-spacing: -1px; line-height: 1.05; margin: 0 0 12px;">Shapes, not screens.</h1>
+    <p style="font: 400 17px Montserrat; color: var(--text-secondary); line-height: 1.55; margin: 0;">The marketing brand lives outside the SaaS UI. Organic Sunset shapes carry the brand across ads, posters, social, hero shots, and presentation covers. Everything here is composed from the same 8 silhouettes filled with the same 4 gradients.</p>
+  </header>
+
+  <section class="group" data-screen-label="01 Solo Hero">
+    <h2>Solo · Bloom on Sunset</h2>
+    <p class="sub">A signature Stone · Bloom bleeds off the top-right. A small Mist marble anchors the bottom-left. The brand essence in one composition.</p>
+    <div id="solo"></div>
+  </section>
+
+  <section class="group" data-screen-label="02 Duo + Stack Posters">
+    <h2>Duo · Stack — campaign posters</h2>
+    <p class="sub">Posters lead with one composition pattern at full canvas. Duo for product reveals; Stack for editorial rhythm.</p>
+    <div class="grid-2">
+      <div id="duo"></div>
+      <div id="stack"></div>
+    </div>
+  </section>
+
+  <section class="group" data-screen-label="03 Tier Cards">
+    <h2>Tier cards</h2>
+    <p class="sub">Loyalty tier visualisations. Stone · Round in tier-specific gradients announces VIP, Standard, and New segments without using shapes in the product UI itself.</p>
+    <div class="grid-3" id="tiers"></div>
+  </section>
+
+  <section class="group" data-screen-label="04 Feature Banner">
+    <h2>Feature banner</h2>
+    <p class="sub">A horizontal banner for email headers, blog covers, or product-update launches. Sunset background with a contrasting Blossom Bloom bleeding behind the content.</p>
+    <div id="feature"></div>
+  </section>
+
+  <script type="text/babel" src="shapes.jsx"></script>
+  <script type="text/babel" src="compositions.jsx"></script>
+
+  <script type="text/babel">
+    const { GradientDefs, SoloHero, DuoHero, StackPoster, TierCard, FeatureBanner } = window;
+
+    // GradientDefs must mount once at the top of the document so SVG <path fill="url(#sunset)"> resolves.
+    const defsRoot = document.createElement("div");
+    document.body.insertBefore(defsRoot, document.body.firstChild);
+    ReactDOM.createRoot(defsRoot).render(<GradientDefs />);
+
+    ReactDOM.createRoot(document.getElementById("solo")).render(<SoloHero />);
+    ReactDOM.createRoot(document.getElementById("duo")).render(<DuoHero />);
+    ReactDOM.createRoot(document.getElementById("stack")).render(<StackPoster />);
+    ReactDOM.createRoot(document.getElementById("tiers")).render(
+      <React.Fragment>
+        <TierCard kind="New" />
+        <TierCard kind="Standard" />
+        <TierCard kind="VIP" />
+      </React.Fragment>
+    );
+    ReactDOM.createRoot(document.getElementById("feature")).render(<FeatureBanner />);
+  </script>
+</body>
+</html>
