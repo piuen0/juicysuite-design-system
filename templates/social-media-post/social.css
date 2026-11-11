@@ -1,0 +1,141 @@
+/* JuicySuite — Social Media Post Template · shared post styles
+   Every value below is taken from the design system (tokens/colors.css, guidelines/*, templates/deck).
+   Nothing here is a new token: fields, fills and type settings are copied, only renamed into short classes. */
+
+/* ---------- Canvas sizes (exact export pixels) ---------- */
+.post{position:relative;overflow:hidden;flex:none;font-family:"Montserrat",sans-serif;color:#474242;background:#fff;
+  -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;
+  /* per-size type + safe area (overridden below) */
+  --m:80px;          /* safe margin: type + wordmark never closer to any edge */
+  --ey:24px;         /* eyebrow */
+  --hl:96px;         /* headline */
+  --bd:32px;         /* supporting line */
+  --cta:28px;        /* CTA label */
+  --ctah:76px;       /* CTA pill height */
+  --wm:200px;        /* wordmark width */
+}
+.post *{box-sizing:border-box}
+.sq{width:1080px;height:1080px}
+.pt{width:1080px;height:1350px}
+.st{width:1080px;height:1920px;--m:90px;--ey:30px;--hl:136px;--bd:40px;--cta:34px;--ctah:96px;--wm:250px;
+  --safe-top:250px;--safe-bottom:340px}
+.ls{width:1200px;height:627px;--m:60px;--ey:19px;--hl:68px;--bd:24px;--cta:22px;--ctah:58px;--wm:160px}
+
+/* ---------- Positioning helper ---------- */
+.a{position:absolute}
+.stack{display:flex;flex-direction:column}
+.row{display:flex;align-items:center}
+
+/* ---------- Type (Montserrat only · deck / Composition Balance settings) ---------- */
+.ey{font-size:var(--ey);font-weight:700;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;color:#FF761A}
+.hl{font-size:var(--hl);font-weight:800;letter-spacing:-.035em;line-height:.94;color:#474242;text-wrap:balance}
+.dp{font-weight:800;letter-spacing:-.04em;line-height:.88;white-space:nowrap}          /* frame-break / knockout display */
+.nm{font-weight:800;letter-spacing:-.055em;line-height:.86;color:#474242}               /* hero numeral */
+.bd{font-size:var(--bd);font-weight:500;line-height:1.4;color:#5E555A;text-wrap:pretty}
+.cap{font-size:calc(var(--ey)*.82);font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1.25;color:#7F8C8D}
+.meta{font-size:calc(var(--bd)*.75);font-weight:600;line-height:1.35;color:#7F8C8D}
+.ey + .hl{margin-top:calc(var(--ey)*.95)}
+.hl + .bd{margin-top:calc(var(--bd)*.9)}
+
+/* colour utilities — text */
+.c-ink{color:#474242}.c-body{color:#5E555A}.c-mut{color:#7F8C8D}.c-or{color:#FF761A}.c-wh{color:#fff}.c-pk{color:#FFABE7}
+
+/* ---------- CTA pill (single orange accent · ink · white) ---------- */
+.cta{display:inline-flex;align-items:center;gap:.5em;height:var(--ctah);padding:0 calc(var(--ctah)*.5);border-radius:999px;
+  font-size:var(--cta);font-weight:700;letter-spacing:-.005em;white-space:nowrap;background:#FF761A;color:#fff;width:max-content}
+.cta.ink{background:#474242;color:#fff}
+.cta.wh{background:#fff;color:#474242}
+.cta.ghost{background:transparent;color:#474242;box-shadow:inset 0 0 0 3px #474242}
+.chip{display:inline-flex;align-items:center;height:calc(var(--ey)*2.2);padding:0 calc(var(--ey)*.9);border-radius:999px;font-size:var(--ey);font-weight:800;color:#474242;white-space:nowrap;width:max-content}
+
+/* ---------- Wordmark (real SVG assets only: orange · white · black) ---------- */
+.wm{position:absolute;display:block;width:var(--wm);height:auto}
+
+/* ---------- Fields: full-bleed marketing backgrounds (colors-marketing-gradients) ---------- */
+.f-blush{background:linear-gradient(25deg,#FFABE7 0%,#F4AEE6 35%,#CBBBE3 60%,#9FCADF 80%,#3BE3D2 100%)}
+.f-meadow{background:linear-gradient(35deg,#3BE3D2 0%,#86E08A 14%,#C4DF5A 35%,#E8DC40 60%,#FFDB2E 100%)}
+.f-corner{background:radial-gradient(ellipse 125% 78% at 0% 100%,#FF5A0A 0%,rgba(222,112,48,.88) 14%,rgba(170,150,100,.6) 32%,rgba(110,195,165,.3) 55%,rgba(59,227,210,0) 80%),linear-gradient(180deg,#3BE3D2 0%,#3BE3D2 50%,#55D3BC 100%)}
+.f-grape{background:linear-gradient(40deg,#00CE73 0%,#0CC27A 38%,#2E8FA8 62%,#4F5FD6 82%,#6B2BF0 100%)}
+/* Fields from the eight approved field × shape pairings (colors-gradient-pairings) — use only with their partner fill */
+.p1{background:linear-gradient(40deg,#FF7927 0%,#FF8965 45%,#FFA7D9 100%)}   /* Sunset   × Blush  fill  (pair1) */
+.p2{background:linear-gradient(40deg,#E48534 0%,#7CBE93 45%,#37E3D2 100%)}   /* Corner   × Dusk   fill  (pair2) */
+.p3{background:linear-gradient(40deg,#5EE2B2 0%,#B5DE68 40%,#FEDA2C 100%)}   /* Meadow   × Sunset fill  (pair3) */
+.p4{background:linear-gradient(40deg,#FEABE6 0%,#B0C2DF 50%,#36E4D2 78%)}    /* Blush    × Coral  fill  (pair4) */
+.p5{background:linear-gradient(40deg,#54D2C4 0%,#AF989A 50%,#F66C78 100%)}   /* Coral    × Citrus fill  (pair5) */
+.p6{background:linear-gradient(40deg,#FFDA2A 0%,#F2CF3D 50%,#B9A185 100%)}   /* Butter   × Sunset fill  (pair6) */
+.p7{background:linear-gradient(40deg,#07E964 0%,#14C97C 45%,#6249D8 100%)}   /* Grape    × Blush  fill  (pair7) */
+.p8{background:linear-gradient(40deg,#FFAAE6 0%,#FFA0D0 45%,#FE645D 100%)}   /* Rose     × Aqua   fill  (pair8) */
+/* Neutral surfaces */
+.f-white{background:#fff}
+.f-cream{background:#FFF8F2}                                  /* --surface-cream (marketing canvas) */
+.f-edm{background:#F5F3EE}                                    /* --surface-edm-page (shape-free pill layouts) */
+.f-window{background:radial-gradient(ellipse 40% 60% at 0% 100%,rgba(255,118,26,.85) 0%,rgba(255,118,26,0) 72%),radial-gradient(ellipse 36% 54% at 100% 0%,rgba(255,171,231,.95) 0%,rgba(255,171,231,0) 72%),#FFF8F2}
+.f-glow{background:radial-gradient(ellipse 75% 90% at 0% 100%,rgba(255,118,26,.55) 0%,rgba(255,118,26,0) 65%),#FFFFFF} /* --gradient-orange-corner */
+/* Solid 50 / 35 / 15 sets (brand-pairings) */
+.s-green{background:#00CE73}.s-teal{background:#36E4D2}.s-yellow{background:#FFDA2C}
+.s-coral{background:#FF5C4C}.s-pink{background:#FFABE7}.s-orange{background:#FF761A}
+.s-mauve{background:#A9939A}.s-purple{background:#904AA8}
+
+/* ---------- Frames, panels, cards ---------- */
+.frame{position:absolute;border-style:solid;border-color:#FFABE7}           /* frame-break frame ≈ 3% of width */
+.frame.or{border-color:#FF761A}
+.window{position:absolute;background:#fff;border-radius:48px;box-shadow:0 6px 18px rgba(255,118,26,.14)}
+.card{background:#FFFDF6;border-radius:28px}                                 /* --surface-cream-card */
+.card.w{background:#fff}
+.butter{background:linear-gradient(135deg,#FFFDF3 0%,#FFF7CF 35%,#F7EFB2 68%,#FFF4D8 100%)}
+
+/* ---------- Image slot (swap for a real photo: put an <img> inside) ---------- */
+/* Placeholder plate: a graded warm "photo" plate (DS cream → peach → blush) with a soft key light, so photo-led
+   templates read as photographs-to-be rather than flat pink boxes. Drop an <img> in to replace it. */
+.img,.js-photo{background:radial-gradient(90% 75% at 22% 18%,rgba(255,255,255,.78) 0%,rgba(255,255,255,0) 60%),radial-gradient(70% 60% at 85% 95%,rgba(255,118,26,.22) 0%,rgba(255,118,26,0) 70%),linear-gradient(155deg,#FFE6D6 0%,#FFD3C4 40%,#FFC6DD 75%,#EFCDEB 100%)}
+.img{position:absolute;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.img > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.img > span,.js-photo > span{font-size:var(--ey);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A9939A;text-align:center;line-height:1.5;position:relative;display:flex;flex-direction:column;align-items:center;gap:.5em}
+.img > span::before,.js-photo > span::before{content:"";width:2.4em;height:1.9em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 19' fill='none' stroke='%23A9939A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='1' y='1' width='22' height='17' rx='3'/%3E%3Ccircle cx='8' cy='7' r='2'/%3E%3Cpath d='M23 14l-6-6-11 10'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.9}
+.img > span small,.js-photo > span small{display:block;font-size:.72em;letter-spacing:.12em;opacity:.8}
+
+/* ---------- Pills (EDM / Daily Report language — 135° / 90° on small pill elements only) ---------- */
+.pill-row{display:flex;align-items:center;justify-content:space-between;background:#FCFBF7;border-radius:999px}
+.pv{display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;color:#474242;white-space:nowrap}
+.g-coral{background:linear-gradient(135deg,#FF8D63,#FF92B9)}
+.g-pink{background:linear-gradient(135deg,#FFD4E5,#F6A8DD)}
+.g-aqua{background:linear-gradient(135deg,#2FD4C7,#DFFF37)}
+.g-lime{background:linear-gradient(90deg,#E8F51D,#23D5C8)}
+.g-butter{background:linear-gradient(90deg,#FFF8D7,#FFE166)}
+.g-blush{background:linear-gradient(90deg,#FF9BD9,#FFC0EA)}
+.g-peach{background:linear-gradient(90deg,#FF845E,#FF9BD9)}
+.dot{display:inline-block;border-radius:50%}
+
+/* ---------- Product UI fragments (SaaS kit language: white card · 16px radius scaled · shadow-sm) ---------- */
+.ui{background:#fff;border-radius:32px;box-shadow:0 4px 16px rgba(0,0,0,.08);color:#5E555A;font-family:"Montserrat",sans-serif}
+.ui-t{font-weight:700;color:#474242;letter-spacing:-.01em}
+.ui-m{font-weight:500;color:#7F8C8D}
+.toggle{position:relative;flex:none;border-radius:999px;background:#4CD964}
+.toggle::after{content:"";position:absolute;top:8%;right:6%;height:84%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.badge{display:inline-flex;align-items:center;border-radius:999px;font-weight:700;white-space:nowrap}
+.b-ok{background:#E8F8E8;color:#00874B}.b-vip{background:#F0E6FF;color:#8E44AD}.b-or{background:#FFF0E6;color:#E0620C}
+.ico{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;flex:none}
+.ico svg{width:50%;height:50%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sunset{background:linear-gradient(50deg,#FF761A 0%,#FF7D36 13%,#FFABE7 100%)}   /* product master — wallet pass / CTA only */
+.bar{display:block;border-radius:999px}
+
+/* ---------- Shape element (rendered by social.js from the DS paths) ---------- */
+js-shape{position:absolute;display:block;container-type:size}
+js-shape .js-photo > span{font-size:min(var(--ey),11cqw)}
+js-shape > svg{display:block;width:100%;height:100%;overflow:visible}
+.js-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.js-photo > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Safe-area guide overlay (?guides=1) ---------- */
+.guides .post::after{content:"";position:absolute;z-index:99;pointer-events:none;
+  inset:var(--safe-top,var(--m)) var(--m) var(--safe-bottom,var(--m)) var(--m);outline:2px dashed rgba(247,96,122,.9)}
+
+/* ---------- Carousel pager (slide count designed into the layout) ----------
+   <div class="pager" data-n="6" data-i="1"></div> → "01 / 06" + a segment track; .wh for saturated grounds */
+.pager{display:flex;align-items:center;gap:20px;font-size:22px;font-weight:800;letter-spacing:.08em;color:#474242;white-space:nowrap}
+.pager .seg{display:flex;gap:8px;align-items:center}
+.pager .seg i{display:block;width:16px;height:10px;border-radius:999px;background:rgba(71,66,66,.2)}
+.pager .seg i.on{width:56px;background:#FF761A}
+.pager.wh{color:#fff}.pager.wh .seg i{background:rgba(255,255,255,.45)}.pager.wh .seg i.on{background:#fff}
+.cta .ico{width:1.3em!important;height:1.3em!important;margin-right:-.35em}
+.cta .ico svg{width:70%;height:70%;stroke-width:2.6}

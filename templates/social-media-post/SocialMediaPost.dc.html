@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Social Media Post Template" description="8 formats × 8 templates = 64 export-ready posts — square announcement, product feature, stat, quote; 4:5 case study; 9:16 story; LinkedIn landscape; carousel cover. Each at exact pixel size with swap slots and a how-to-adapt note" -->
+<helmet><script src="./ds-base.js"></script><script src="./catalogue.js"></script><style>
+.smp{font-family:Montserrat,sans-serif;color:#474242;background:#F5F3EE;min-height:100vh}
+.smp-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:40px 48px 18px}
+.smp-h .e{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FF761A}
+.smp-h h1{margin:8px 0 0;font-size:44px;font-weight:800;letter-spacing:-.035em;line-height:1}
+.smp-h p{margin:10px 0 0;font-size:15px;line-height:1.55;color:#5E555A;max-width:780px}
+.smp-h img{width:150px;display:block}
+.smp-t{display:flex;flex-wrap:wrap;gap:8px;padding:6px 48px 4px}
+.smp-t button{font:600 13px Montserrat,sans-serif;color:#5E555A;background:#FFFDF6;border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+.smp-t button:hover{background:#fff;color:#474242}
+.smp-t button[aria-selected=true]{background:#474242;color:#fff}
+.smp-t button b{color:#FF761A;margin-right:6px;font-weight:800}.smp-t button[aria-selected=true] b{color:#FFABE7}
+.smp-x{display:flex;gap:18px;padding:10px 48px 0;font-size:12px;font-weight:600;color:#7F8C8D}.smp-x a{color:#FF761A;text-decoration:none}
+.smp iframe{display:block;width:100%;border:0;min-height:900px}
+</style></helmet>
+<div class="smp">
+  <div class="smp-h">
+    <div><div class="e">Templates · Marketing</div><h1>Social Media Post Template</h1><p>64 starting points — 8 formats, 8 templates each — built from the JuicySuite fields, Blob shapes, Montserrat and the real wordmarks. Every post is an exact-size frame with swap slots (eyebrow, headline, line, stat, image, CTA, wordmark) and a how-to-adapt note.</p></div>
+    <img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite">
+  </div>
+  <div class="smp-t" role="tablist" id="smp-tabs"></div>
+  <div class="smp-x"><span>Export one post: open a format, then “Open … export ↗” (or add <code>?t=01</code>). Safe-area overlay: add <code>&amp;guides=1</code>.</span><a id="smp-open" href="overview.html" target="_blank">Open this view ↗</a></div>
+  <iframe id="smp-f" src="overview.html" title="Social Media Post Template"></iframe>
+</div>
+<script>
+(function(){
+  var tabs=document.getElementById('smp-tabs'),fr=document.getElementById('smp-f'),op=document.getElementById('smp-open');
+  var items=[{no:'',name:'All 64 · overview',file:'overview.html'}].concat(window.JS_SOCIAL_FORMATS||[]);
+  function sel(i){
+    [].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',k===i?'true':'false')});
+    fr.src=items[i].file;op.href=items[i].file;
+  }
+  items.forEach(function(it,i){var b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML=(it.no?'<b>'+it.no+'</b>':'')+it.name;b.onclick=function(){sel(i)};tabs.appendChild(b)});
+  sel(0);
+  function size(){try{var d=fr.contentDocument;if(d&&d.body){fr.style.height=Math.max(900,d.documentElement.scrollHeight)+'px'}}catch(e){fr.style.height='2400px'}}
+  fr.addEventListener('load',function(){size();setTimeout(size,600);setTimeout(size,1800)});
+})();
+</script>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Media Post Template · 8 × 8 overview</title>
+<script src="./ds-base.js"></script>
+<script src="./catalogue.js"></script>
+<style>
+html,body{margin:0;background:#F5F3EE;font-family:Montserrat,sans-serif;color:#474242}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:40px 48px 12px}
+header .e{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FF761A}
+header h1{margin:6px 0 0;font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+header p{margin:6px 0 0;font-size:14px;line-height:1.5;color:#5E555A;max-width:820px}
+header img{width:140px}
+main{display:flex;flex-direction:column;gap:22px;padding:16px 48px 56px}
+.r{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:start}
+.r .l{padding-top:4px}.r .l b{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF761A}.r .l a{display:block;margin-top:4px;font-size:15px;font-weight:800;letter-spacing:-.01em;color:#474242;text-decoration:none;line-height:1.2}.r .l span{display:block;margin-top:4px;font-size:11px;font-weight:600;color:#7F8C8D}
+.f{position:relative;width:100%;overflow:hidden}.f iframe{position:absolute;left:0;top:0;border:0;width:1800px;transform-origin:0 0;background:transparent}
+</style></head>
+<body>
+<header><div><div class="e">Social Media Post Template · Overview</div><h1>8 formats × 8 templates</h1><p>Every row is one use at its exact export size. Open a row for names, how-to-adapt notes and single-post exports.</p></div><img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite"></header>
+<main id="m"></main>
+<script>
+if(window.top!==window)document.querySelector('header').style.display='none';
+const m=document.getElementById('m'),GAP=14,IW=1800;
+for(const f of JS_SOCIAL_FORMATS){
+  const cw=(IW-7*GAP)/8, ih=Math.ceil(cw*f.h/f.w);
+  const r=document.createElement('section');r.className='r';
+  r.innerHTML=`<div class="l"><b>${f.no}</b><a href="${f.file}" target="_top">${f.name}</a><span>${f.w} × ${f.h}</span></div><div class="f" data-h="${ih}" style="aspect-ratio:${IW}/${ih}"><iframe src="${f.file}?row=1" loading="lazy" title="${f.name}" style="height:${ih}px" scrolling="no"></iframe></div>`;
+  m.appendChild(r);
+}
+function fit(){document.querySelectorAll('.f').forEach(d=>{d.firstChild.style.transform='scale('+(d.clientWidth/IW)+')'})}
+addEventListener('resize',fit);new ResizeObserver(fit).observe(m);fit();
+</script>
+</body></html>

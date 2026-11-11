@@ -33,6 +33,7 @@ templates/
   deck/               Deck.dc.html — 12-slide 16:9 layout template, one slide per Composition Balance arrangement
   report/             Report.dc.html — printable monthly performance report
   proposal/           Proposal.dc.html — printable proposal / quotation
+  social-media-post/  SocialMediaPost.dc.html — Social Media Post Template: 8 formats × 8 templates (64 posts) at exact export sizes; one file per format, overview.html for the 8 × 8 grid
 SKILL.md              agent-skill entry point
 thumbnail.html        homepage tile (Sunset + white wordmark)
 uploads/              original v2.0 source zip contents + daily-report EDM HTML
@@ -43,6 +44,25 @@ uploads/              original v2.0 source zip contents + daily-report EDM HTML
 - **CardHeader, SegmentedPills, DonutLegend** — factored out of repeated inline markup in the source screens.
 - **PillStatRow, SplitBar, PillComposition** — lifted from the EDM HTML so previews can reuse them.
 - **Blob** — CSS silhouettes traced by eye from the 2026 poster references.
+
+## Social Media Post Template
+`templates/social-media-post/` — 64 starting posts: 8 formats × 8 templates. Built only from existing tokens, fields, pairings, Blob / Marble / Drop / Ellipse paths (copied from `components/shapes/` into `shapes.js`) and the three wordmark SVGs.
+
+| # | Format | Size | File |
+|---|---|---|---|
+| 01 | Square announcement | 1080 × 1080 | `01-square-announcement.html` |
+| 02 | Square product feature | 1080 × 1080 | `02-square-product-feature.html` |
+| 03 | Square stat / proof point | 1080 × 1080 | `03-square-stat.html` |
+| 04 | Square quote | 1080 × 1080 | `04-square-quote.html` |
+| 05 | Portrait case study | 1080 × 1350 (4:5, incl. Xiaohongshu) | `05-portrait-case-study.html` |
+| 06 | Story / Reels | 1080 × 1920 | `06-story-reels.html` |
+| 07 | Landscape LinkedIn | 1200 × 627 | `07-landscape-linkedin.html` |
+| 08 | Carousel cover | 1080 × 1080 | `08-carousel-cover.html` |
+
+- Each format file shows its 8 templates with a how-to-adapt note; `?t=03` shows one post alone at exact pixels for export, `?sheet=1` a contact sheet, `&guides=1` the safe-area overlay.
+- Safe margins: 80 px (square, portrait), 60 px (landscape); stories keep type and wordmark 250 px from the top and 340 px from the bottom.
+- Swap slots per post: eyebrow, headline, supporting line or quote, optional stat, optional image (`.img` box or `<js-shape photo="…">`), CTA, wordmark (orange / white / black only).
+- Text sits in one zone (one shape, one card or open field). Max two gradients in view. Shape-led and shape-free templates alternate inside every format.
 
 ## Gradient rules (from GRADIENT_GUIDELINES.md — authoritative)
 - **Product gradient**: **Sunset**, 50° fixed, sidebar + primary CTA only. **Mist** and **Meadow** (50°) are **legacy promo** gradients — superseded by the Blush and Meadow fields in Marketing Gradients. Citrus, Blossom and pink pastel washes are **retired**.
