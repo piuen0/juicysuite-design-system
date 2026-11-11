@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Social Media Post Template · 8 × 8 overview</title>
+<title>Social Media Post Template · overview</title>
 <script src="./ds-base.js"></script>
 <script src="./catalogue.js"></script>
 <style>
@@ -16,17 +16,19 @@ main{display:flex;flex-direction:column;gap:22px;padding:16px 48px 56px}
 .f{position:relative;width:100%;overflow:hidden}.f iframe{position:absolute;left:0;top:0;border:0;width:1800px;transform-origin:0 0;background:transparent}
 </style></head>
 <body>
-<header><div><div class="e">Social Media Post Template · Overview</div><h1>8 formats × 8 templates</h1><p>Every row is one use at its exact export size. Open a row for names, how-to-adapt notes and single-post exports.</p></div><img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite"></header>
+<header><div><div class="e">Social Media Post Template · Overview</div><h1>8 formats · 76 templates</h1><p>Every row is one use at its exact export size; Story / Reels runs three rows (core, general, image-led). Open a row for names, how-to-adapt notes and single-post exports.</p></div><img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite"></header>
 <main id="m"></main>
 <script>
 if(window.top!==window)document.querySelector('header').style.display='none';
 const m=document.getElementById('m'),GAP=14,IW=1800;
 for(const f of JS_SOCIAL_FORMATS){
-  const cw=(IW-7*GAP)/8, ih=Math.ceil(cw*f.h/f.w);
+  const cw=(IW-7*GAP)/8, rows=Math.ceil((f.n||8)/8), ih=Math.ceil(cw*f.h/f.w)*rows+(rows>1?rows*(GAP+40):0);
   const r=document.createElement('section');r.className='r';
   r.innerHTML=`<div class="l"><b>${f.no}</b><a href="${f.file}" target="_top">${f.name}</a><span>${f.w} × ${f.h}</span></div><div class="f" data-h="${ih}" style="aspect-ratio:${IW}/${ih}"><iframe src="${f.file}?row=1" loading="lazy" title="${f.name}" style="height:${ih}px" scrolling="no"></iframe></div>`;
   m.appendChild(r);
 }
+// grouped rows: size each iframe to its real content once loaded
+document.querySelectorAll('.f iframe').forEach(fr=>fr.addEventListener('load',()=>{try{const h=fr.contentDocument.documentElement.scrollHeight;if(h){fr.style.height=h+'px';fr.parentNode.style.aspectRatio=IW+'/'+h;fit()}}catch(e){}}));
 function fit(){document.querySelectorAll('.f').forEach(d=>{d.firstChild.style.transform='scale('+(d.clientWidth/IW)+')'})}
 addEventListener('resize',fit);new ResizeObserver(fit).observe(m);fit();
 </script>

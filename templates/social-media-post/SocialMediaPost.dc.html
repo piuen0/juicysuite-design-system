@@ -7,7 +7,7 @@
 </head>
 <body>
 <x-dc>
-<!-- @template name="Social Media Post Template" description="8 formats × 8 templates = 64 export-ready posts — square announcement, product feature, stat, quote; 4:5 case study; 9:16 story; LinkedIn landscape; carousel cover. Each at exact pixel size with swap slots and a how-to-adapt note" -->
+<!-- @template name="Social Media Post Template" description="8 formats, 76 export-ready posts (8 templates each; Story / Reels has 20) — square announcement, product feature, stat, quote; 4:5 case study; 9:16 story; LinkedIn landscape; carousel cover. Each at exact pixel size with swap slots and a how-to-adapt note" -->
 <helmet><script src="./ds-base.js"></script><script src="./catalogue.js"></script><style>
 .smp{font-family:Montserrat,sans-serif;color:#474242;background:#F5F3EE;min-height:100vh}
 .smp-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:40px 48px 18px}
@@ -25,7 +25,7 @@
 </style></helmet>
 <div class="smp">
   <div class="smp-h">
-    <div><div class="e">Templates · Marketing</div><h1>Social Media Post Template</h1><p>64 starting points — 8 formats, 8 templates each — built from the JuicySuite fields, Blob shapes, Montserrat and the real wordmarks. Every post is an exact-size frame with swap slots (eyebrow, headline, line, stat, image, CTA, wordmark) and a how-to-adapt note.</p></div>
+    <div><div class="e">Templates · Marketing</div><h1>Social Media Post Template</h1><p>76 starting points — 8 formats, 8 templates each and 20 for Story / Reels — built from the JuicySuite fields, Blob shapes, Montserrat and the real wordmarks. Every post is an exact-size frame with swap slots (eyebrow, headline, line, stat, image, CTA, wordmark) and a how-to-adapt note.</p></div>
     <img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite">
   </div>
   <div class="smp-t" role="tablist" id="smp-tabs"></div>
@@ -35,7 +35,7 @@
 <script>
 (function(){
   var tabs=document.getElementById('smp-tabs'),fr=document.getElementById('smp-f'),op=document.getElementById('smp-open');
-  var items=[{no:'',name:'All 64 · overview',file:'overview.html'}].concat(window.JS_SOCIAL_FORMATS||[]);
+  var items=[{no:'',name:'All 76 · overview',file:'overview.html'}].concat(window.JS_SOCIAL_FORMATS||[]);
   function sel(i){
     [].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',k===i?'true':'false')});
     fr.src=items[i].file;op.href=items[i].file;

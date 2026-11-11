@@ -6,26 +6,25 @@
 <script src="./shapes.js"></script>
 <script src="./social.js" defer></script>
 </head>
-<body data-no="06" data-name="Story / Reels" data-size="1080 × 1920 px · 9:16" data-use="Full-screen, read in two seconds. All type and the wordmark sit between 250 px from the top and 340 px from the bottom, clear of the platform's profile bar, reply field and stickers.">
+<body data-no="06" data-name="Story / Reels" data-size="1080 × 1920 px · 9:16" data-use="Full-screen, read in two seconds. All type and the wordmark sit between 250 px from the top and 340 px from the bottom, clear of the platform's profile bar, reply field and stickers. 20 templates: 01–08 core set, 09–14 general (type and shape), 15–20 image-led.">
 
 <!-- 01 · Knockout stack — the brand poster -->
-<article class="post st f-blush" data-t="01" data-name="Knockout stack" data-tags="Shape-led · Blush field · Brand"
- data-adapt="<b>Change</b> the short body and CTA. The display line is the brand line — swap only for another two-line, ≤ 8-character pair. <b>Keep</b> the tall squircle over the cushion with the pebble tucked right; the pink display sits wholly on the squircle's white (one ground), at its widest point. <b>Wordmark</b> orange, inside the squircle below the 250 px line.">
-  <js-shape shape="squircle" fill="#fff" style="left:29px;top:56px;width:1022px;height:1210px"></js-shape>
-  <js-shape shape="cushion" fill="#fff" style="left:29px;top:1293px;width:640px;height:600px"></js-shape>
-  <js-shape shape="pebble" fill="#fff" style="left:720px;top:1330px;width:270px;height:262px"></js-shape>
-  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="left:130px;top:300px;width:240px">
-  <div class="a bd" style="left:130px;top:410px;width:760px;font-size:42px;font-weight:600;color:#474242">Points, stamps and birthday perks that bring regulars back.</div>
-  <div class="a dp" style="left:112px;top:640px;font-size:212px;color:#FFB0EA;letter-spacing:-.045em;line-height:.86">Juice up<br>Grow on</div>
-  <div class="a cta" style="left:130px;top:1390px">Book a demo</div>
-  <div class="a meta" style="left:132px;top:1508px;font-size:26px">juicysuite.ai</div>
+<article class="post st f-blush" data-group="core" data-t="01" data-name="Knockout stack" data-tags="Shape-led · Blush field · Brand"
+ data-adapt="<b>Change</b> the short body and CTA. The display line is the brand line — swap only for another two-line, ≤ 8-character pair. <b>Keep</b> the tall squircle over the cushion with the pebble tucked right; everything — wordmark, body, pink display, CTA + URL row — is one left-aligned stack (x 150) wholly on the squircle's white, ≥ 80 px clear of its edge. Cushion and pebble carry no type. <b>Wordmark</b> orange, inside the squircle below the 250 px line.">
+  <js-shape shape="squircle" fill="#fff" style="left:29px;top:56px;width:1022px;height:1250px"></js-shape>
+  <js-shape shape="cushion" fill="#fff" style="left:29px;top:1333px;width:640px;height:600px"></js-shape>
+  <js-shape shape="pebble" fill="#fff" style="left:720px;top:1370px;width:270px;height:262px"></js-shape>
+  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="left:150px;top:300px;width:240px">
+  <div class="a bd" style="left:150px;top:410px;width:740px;font-size:42px;font-weight:600;color:#474242">Points, stamps and birthday perks that bring regulars back.</div>
+  <div class="a dp" style="left:144px;top:590px;font-size:178px;color:#FFB0EA;letter-spacing:-.045em;line-height:.86">Juice up<br>Grow on</div>
+  <div class="a row" style="left:150px;top:960px;gap:36px;align-items:center"><span class="cta">Book a demo</span><span class="meta" style="font-size:26px">juicysuite.ai</span></div>
 </article>
 
 <!-- 02 · Frame break — pink frame, Grape slab, three-line display -->
-<article class="post st f-white" data-t="02" data-name="Frame break · Tall" data-tags="Shape-led · White + pink frame · Display"
- data-adapt="<b>Change</b> the three display words (≤ 5 characters each), body (≤ 14 words) and CTA. <b>Keep</b> the pink frame, the Grape slab breaking out at the left, display in frame pink. <b>Wordmark</b> white, inside the blob.">
+<article class="post st f-white" data-group="core" data-t="02" data-name="Frame break · Tall" data-tags="Shape-led · White + pink frame · Display"
+ data-adapt="<b>Change</b> the three display words (≤ 5 characters each), body (≤ 14 words) and CTA. <b>Keep</b> the pink frame, the Grape slab breaking out at the left and bottom and filling right to the frame stroke, display in frame pink. <b>Wordmark</b> white, inside the blob.">
   <div class="frame" style="left:96px;top:150px;right:54px;bottom:200px;border-width:34px"></div>
-  <js-shape shape="slab" grad="grape" style="left:36px;top:220px;width:900px;height:1560px"></js-shape>
+  <js-shape shape="slab" grad="grape" style="left:36px;top:200px;width:975px;height:1600px"></js-shape>
   <img class="wm" src="../../assets/juicysuite-wordmark-white.svg" alt="JuicySuite" style="left:170px;top:420px;width:220px">
   <div class="a stack" style="left:170px;top:520px;width:620px">
     <div class="bd c-wh" style="font-weight:600">Birthday week? Members get double points, automatically.</div>
@@ -35,11 +34,11 @@
 </article>
 
 <!-- 03 · Photo + cushion card -->
-<article class="post st f-white" data-t="03" data-name="Photo · Cushion" data-tags="Photo · White cushion · Light"
- data-adapt="<b>Change</b> photo (1080 × 1200, subject in the top half), eyebrow, headline and CTA. <b>Keep</b> the white cushion over the photo's lower edge and all type inside it, above the 340 px safe line. <b>Wordmark</b> orange, inside the cushion.">
+<article class="post st f-white" data-group="core" data-t="03" data-name="Photo · Cushion" data-tags="Photo · White cushion · Light"
+ data-adapt="<b>Change</b> photo (1080 × 1200, subject in the top half), eyebrow, headline and CTA. <b>Keep</b> the white cushion over the photo's lower edge and all type centred on its flat crest, above the 340 px safe line. <b>Wordmark</b> orange, centred on the cushion's white with ≥ 80 px clear of the seam — never on or across the photo edge.">
   <div class="img" style="left:0;top:0;width:1080px;height:1240px"><span>Lifestyle photo<small>1080 × 1240 · subject in top half</small></span></div>
   <js-shape shape="cushion" fill="#fff" style="left:29px;top:1000px;width:1022px;height:1100px"></js-shape>
-  <div class="a stack" style="left:150px;top:1120px;width:780px">
+  <div class="a stack" style="left:90px;right:90px;top:1100px;align-items:center;text-align:center">
     <img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="width:200px;display:block;margin-bottom:40px">
     <div class="ey">This weekend only</div>
     <div class="hl" style="font-size:96px">Triple points on every coffee.</div>
@@ -48,7 +47,7 @@
 </article>
 
 <!-- 04 · This-or-that — type-only cream with answer pills -->
-<article class="post st f-edm" data-t="04" data-name="This or that" data-tags="Shape-free · Cream · Interactive"
+<article class="post st f-edm" data-group="core" data-t="04" data-name="This or that" data-tags="Shape-free · Cream · Interactive"
  data-adapt="<b>Change</b> the question (≤ 10 words) and the two answers. <b>Keep</b> the two answer pills (135° pill gradients) stacked — or delete them and place the platform poll sticker in the same zone. <b>Wordmark</b> orange, top-left below the 250 px line.">
   <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
   <div class="a stack" style="left:90px;top:520px;width:900px">
@@ -63,7 +62,7 @@
 </article>
 
 <!-- 05 · Corner bleed — teal field, orange corner glow, Meadow sweep -->
-<article class="post st f-corner" data-t="05" data-name="Corner bleed" data-tags="Shape-led · Corner field · Saturated"
+<article class="post st f-corner" data-group="core" data-t="05" data-name="Corner bleed" data-tags="Shape-led · Corner field · Saturated"
  data-adapt="<b>Change</b> eyebrow, headline (≤ 3 lines) and body (≤ 12 words). <b>Keep</b> the sweep owning the top half with no type on it; type on open teal beneath it, never on the sweep. <b>Wordmark</b> white, on the orange glow above the 340 px line.">
   <js-shape shape="sweep" grad="meadowSweep" style="left:100px;top:0;width:980px;height:860px"></js-shape>
   <div class="a stack" style="left:90px;top:900px;width:900px">
@@ -75,23 +74,23 @@
 </article>
 
 <!-- 06 · Event — Sunset × Blush, date on the field, details in the egg -->
-<article class="post st p1" data-t="06" data-name="Event · Date" data-tags="Shape-led · Sunset × Blush · Event"
- data-adapt="<b>Change</b> event name, date (2 lines), venue + time and CTA. <b>Keep</b> the date in white on the field, details in ink inside the egg; nothing crosses the egg edge. <b>Wordmark</b> white, top-left below 250 px.">
-  <js-shape shape="egg" grad="pair1" style="left:330px;top:1040px;width:860px;height:1000px"></js-shape>
+<article class="post st p1" data-group="core" data-t="06" data-name="Event · Date" data-tags="Shape-led · Sunset × Blush · Event"
+ data-adapt="<b>Change</b> event name, date (2 lines), venue + time and CTA. <b>Keep</b> the date in white on the field, details in ink inside the egg; nothing crosses the egg edge; keep the venue block ≥ 150 px inside it. <b>Wordmark</b> white, top-left below 250 px.">
+  <js-shape shape="egg" grad="pair1" style="left:190px;top:960px;width:1060px;height:1180px"></js-shape>
   <img class="wm" src="../../assets/juicysuite-wordmark-white.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
   <div class="a stack" style="left:90px;top:440px;width:900px">
     <div class="ey c-wh">Loyalty Live 2026</div>
     <div class="nm c-wh" style="font-size:300px;margin-top:20px">28<br>Nov</div>
   </div>
-  <div class="a stack" style="left:540px;top:1240px;width:460px">
+  <div class="a stack" style="left:570px;top:1230px;width:420px">
     <div class="ui-t" style="font-size:44px">K11 Musea</div>
     <div class="bd c-ink" style="font-weight:600;margin-top:6px">2–6 pm<br>Free for partners</div>
-    <div class="cta ink" style="margin-top:34px">Save your seat</div>
+    <div class="cta ink" style="margin-top:28px">Save your seat</div>
   </div>
 </article>
 
 <!-- 07 · Product — Blush field, wallet pass and toast -->
-<article class="post st f-blush" data-t="07" data-name="Product · Pass" data-tags="Shape-free · Blush field · Product UI"
+<article class="post st f-blush" data-group="core" data-t="07" data-name="Product · Pass" data-tags="Shape-free · Blush field · Product UI"
  data-adapt="<b>Change</b> eyebrow, headline, pass details and the toast. <b>Keep</b> the Sunset pass as the only second gradient, centred; the toast overlapping its lower edge. <b>Wordmark</b> black, bottom-left above the 340 px line.">
   <div class="a stack" style="left:90px;top:270px;width:900px">
     <div class="ey c-ink" style="margin-top:6px">Wallet pass</div>
@@ -111,7 +110,7 @@
 </article>
 
 <!-- 08 · Drop bars — Meadow field, three Sunset-flat drops as a rising chart -->
-<article class="post st f-meadow" data-t="08" data-name="Drop bars · Growth" data-tags="Shape-led · Meadow × Sunset · Chart"
+<article class="post st f-meadow" data-group="core" data-t="08" data-name="Drop bars · Growth" data-tags="Shape-led · Meadow × Sunset · Chart"
  data-adapt="<b>Change</b> headline, the three values / labels; scale drop heights to the values. <b>Keep</b> three drops in one Sunset-flat fill, bottom-bleeding; values in ink on the field above each. <b>Wordmark</b> black, top-right.">
   <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="right:90px;top:270px;width:200px">
   <div class="a stack" style="left:90px;top:270px;width:640px">
@@ -124,6 +123,174 @@
   <js-shape shape="dropTall" grad="sunsetFlat" style="left:450px;top:1040px;width:180px;height:980px"></js-shape>
   <div class="a stack" style="left:750px;top:640px;width:240px;align-items:center"><div class="nm" style="font-size:88px;letter-spacing:-.04em">3.1</div><div class="cap c-ink" style="font-size:20px;margin-top:8px">Q3</div></div>
   <js-shape shape="dropTall" grad="sunsetFlat" style="left:780px;top:800px;width:180px;height:1220px"></js-shape>
+</article>
+
+
+<!-- ===================== 09–14 · General (type & shape) ===================== -->
+
+<!-- 09 · Big numeral — Meadow × Sunset marble bleeding right -->
+<article class="post st p3" data-group="general" data-t="09" data-name="Big numeral" data-tags="Shape-led · Meadow × Sunset · Stat"
+ data-adapt="<b>Change</b> the numeral (≤ 2 characters), eyebrow and headline (≤ 2 lines). <b>Keep</b> the Sunset-fill marble bleeding off the right edge with the white numeral wholly inside it, ≥ 100 px from its edge; headline in ink on the field below. <b>Wordmark</b> black, top-left below the 250 px line.">
+  <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
+  <js-shape shape="marble" grad="pair3" style="left:270px;top:330px;width:900px;height:900px"></js-shape>
+  <div class="a nm c-wh" style="left:380px;top:545px;font-size:500px;letter-spacing:-.07em">10</div>
+  <div class="a stack" style="left:90px;top:1300px;width:900px">
+    <div class="ey c-ink">Digital stamp card</div>
+    <div class="hl" style="font-size:96px">Ten stamps, one free reward.</div>
+  </div>
+</article>
+
+<!-- 10 · Statement — type only on white with the orange corner glow -->
+<article class="post st f-glow" data-group="general" data-t="10" data-name="Statement" data-tags="Shape-free · White + orange glow · Type"
+ data-adapt="<b>Change</b> eyebrow, the statement (≤ 6 words, one or two words per line) and CTA. <b>Keep</b> it type-only: one ink statement filling the width, the orange glow bottom-left behind the CTA. <b>Wordmark</b> orange, top-left below the 250 px line.">
+  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
+  <div class="a stack" style="left:90px;top:460px;width:900px">
+    <div class="ey">Member CRM</div>
+    <div class="hl" style="font-size:180px;line-height:.9;letter-spacing:-.045em;text-wrap:wrap">Know<br>every<br>regular<br>by name.</div>
+  </div>
+  <div class="a cta ink" style="left:90px;top:1400px">See Member CRM <i class="ico" data-icon="chevronRight"></i></div>
+</article>
+
+<!-- 11 · How it works — window with three orange step numerals -->
+<article class="post st f-window" data-group="general" data-t="11" data-name="Steps · Window" data-tags="Shape-free · Window glow · How-to"
+ data-adapt="<b>Change</b> eyebrow, headline (≤ 2 lines) and the three steps (≤ 5 words each). <b>Keep</b> the white window with orange step numbers and hairline dividers; nothing else orange. <b>Wordmark</b> orange, inside the window top-left.">
+  <div class="window" style="left:60px;right:60px;top:236px;bottom:300px"></div>
+  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="left:150px;top:330px;width:200px">
+  <div class="a stack" style="left:150px;top:480px;width:780px">
+    <div class="ey">How it works</div>
+    <div class="hl" style="font-size:112px">No app download needed.</div>
+  </div>
+  <div class="a stack" style="left:150px;right:150px;top:930px">
+    <div class="row" style="gap:44px;padding:48px 0;border-top:3px solid #F0E9E2"><span class="nm c-or" style="font-size:96px;width:130px">01</span><span class="ui-t" style="font-size:42px">Scan the QR at the counter</span></div>
+    <div class="row" style="gap:44px;padding:48px 0;border-top:3px solid #F0E9E2"><span class="nm c-or" style="font-size:96px;width:130px">02</span><span class="ui-t" style="font-size:42px">Add the card to your wallet</span></div>
+    <div class="row" style="gap:44px;padding:48px 0;border-top:3px solid #F0E9E2"><span class="nm c-or" style="font-size:96px;width:130px">03</span><span class="ui-t" style="font-size:42px">Earn on every visit</span></div>
+  </div>
+</article>
+
+<!-- 12 · Colour set — Yellow 50 · Purple 35 · Coral 15 -->
+<article class="post st s-yellow" data-group="general" data-t="12" data-name="Colour set · Yellow" data-tags="Shape-led · Solid 50/35/15 · Saturated"
+ data-adapt="<b>Change</b> eyebrow, headline (≤ 4 lines) and CTA. <b>Keep</b> Yellow 50 · Purple 35 · Coral 15: white type inside the purple slab only, the coral pebble cropping off the bottom-right with no type. <b>Wordmark</b> black, on the yellow below the slab.">
+  <js-shape shape="slab" fill="#904AA8" style="left:-30px;top:200px;width:1010px;height:1150px"></js-shape>
+  <js-shape shape="pebble" fill="#FF5C4C" style="left:760px;top:1290px;width:440px;height:425px"></js-shape>
+  <div class="a stack" style="left:150px;top:400px;width:700px">
+    <div class="ey c-wh">Automations</div>
+    <div class="hl c-wh" style="font-size:128px">Set it once. It runs all year.</div>
+    <div class="cta wh" style="margin-top:56px">See how</div>
+  </div>
+  <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="left:90px;top:1460px;width:220px">
+</article>
+
+<!-- 13 · Countdown — Grape field, giant numeral + day track -->
+<article class="post st f-grape" data-group="general" data-t="13" data-name="Countdown · Grape" data-tags="Shape-free · Grape field · Event"
+ data-adapt="<b>Change</b> event eyebrow, the day count, the day track (one pill per day; filled = gone) and details. <b>Keep</b> it shape-free: white type on Grape, the numeral as hero, the track under it. <b>Wordmark</b> white, top-left below the 250 px line.">
+  <img class="wm" src="../../assets/juicysuite-wordmark-white.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
+  <div class="a ey c-wh" style="left:90px;top:470px">Loyalty Live 2026</div>
+  <div class="a nm c-wh" style="left:100px;top:540px;font-size:640px;letter-spacing:-.06em">3</div>
+  <div class="a hl c-wh" style="left:560px;top:700px;font-size:150px;line-height:.9">days<br>to go</div>
+  <div class="a row" style="left:90px;right:90px;top:1150px;gap:14px">
+    <i class="bar" style="flex:1;height:22px;background:#fff"></i><i class="bar" style="flex:1;height:22px;background:#fff"></i><i class="bar" style="flex:1;height:22px;background:#fff"></i><i class="bar" style="flex:1;height:22px;background:#fff"></i><i class="bar" style="flex:1;height:22px;background:rgba(255,255,255,.35)"></i><i class="bar" style="flex:1;height:22px;background:rgba(255,255,255,.35)"></i><i class="bar" style="flex:1;height:22px;background:rgba(255,255,255,.35)"></i>
+  </div>
+  <div class="a row" style="left:90px;right:90px;top:1260px;justify-content:space-between;align-items:flex-end">
+    <div class="bd c-wh" style="font-weight:600">28 Nov · 2–6 pm<br>K11 Musea</div>
+    <div class="cta wh">Save your seat</div>
+  </div>
+</article>
+
+<!-- 14 · Quote — white cushion on Rose field, Aqua pebble -->
+<article class="post st p8" data-group="general" data-t="14" data-name="Quote · Cushion" data-tags="Shape-led · Rose × Aqua · Testimonial"
+ data-adapt="<b>Change</b> the quote (≤ 14 words), name and business. <b>Keep</b> the quote inside the white cushion, ≥ 100 px from its edge; the Aqua-fill pebble cropping off the top-right with no type. <b>Wordmark</b> white, on the field top-left.">
+  <js-shape shape="pebble" grad="pair8" style="left:700px;top:120px;width:520px;height:500px"></js-shape>
+  <img class="wm" src="../../assets/juicysuite-wordmark-white.svg" alt="JuicySuite" style="left:90px;top:270px;width:220px">
+  <js-shape shape="cushion" fill="#fff" style="left:40px;top:470px;width:1000px;height:1120px"></js-shape>
+  <div class="a stack" style="left:150px;top:720px;width:780px">
+    <div class="nm c-pk" style="font-size:260px;line-height:.6;height:120px">“</div>
+    <div class="hl" style="font-size:96px;line-height:1;letter-spacing:-.03em;margin-top:30px">We stopped printing stamp cards in week one.”</div>
+    <div class="ui-t" style="font-size:36px;margin-top:56px">Joanne Ho</div>
+    <div class="meta" style="font-size:28px;margin-top:6px">Salon Nine, Wan Chai</div>
+  </div>
+</article>
+
+<!-- ===================== 15–20 · Image-led ===================== -->
+
+<!-- 15 · Full-bleed photo + caption card -->
+<article class="post st f-white" data-group="image" data-t="15" data-name="Photo · Full-bleed card" data-tags="Photo · Full-bleed · White card"
+ data-adapt="<b>Change</b> photo (full-bleed 1080 × 1920, subject in the top two-thirds), eyebrow, headline (≤ 2 lines) and CTA. <b>Keep</b> all type on the white card, never on the photo; the card ends inside the 340 px safe line. <b>Wordmark</b> orange, inside the card top-right.">
+  <div class="img" style="left:0;top:0;width:1080px;height:1920px"><span style="transform:translateY(-300px)">Full-bleed photo<small>1080 × 1920 · subject in top two-thirds</small></span></div>
+  <div class="a ui" style="left:60px;right:60px;top:1060px;height:560px;border-radius:56px"></div>
+  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="right:150px;top:1140px;width:180px">
+  <div class="a stack" style="left:150px;top:1140px;width:780px">
+    <div class="ey">Now open</div>
+    <div class="hl" style="font-size:100px;margin-top:40px">Our first partner lounge.</div>
+    <div class="cta" style="margin-top:40px">Get directions</div>
+  </div>
+</article>
+
+<!-- 16 · Marble portrait — partner spotlight on Meadow -->
+<article class="post st f-meadow" data-group="image" data-t="16" data-name="Photo · Marble portrait" data-tags="Photo · Marble crop · Meadow field"
+ data-adapt="<b>Change</b> portrait (square, face centred), eyebrow, headline and body. <b>Keep</b> the photo in a full marble, type in ink on the field below it — never on the photo. <b>Wordmark</b> black, top-right below the 250 px line.">
+  <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="right:90px;top:270px;width:200px">
+  <js-shape shape="marble" photo="placeholder" label="Portrait|square · face centred" style="left:90px;top:380px;width:700px;height:700px"></js-shape>
+  <div class="a stack" style="left:90px;top:1150px;width:900px">
+    <div class="ey c-ink">Partner spotlight</div>
+    <div class="hl" style="font-size:100px">Fall&nbsp;In&nbsp;Thai joins JuicySuite.</div>
+    <div class="bd c-ink" style="font-weight:600;width:760px">Earn and spend points at all six kitchens.</div>
+  </div>
+</article>
+
+<!-- 17 · Split — photo top, Grape field bottom -->
+<article class="post st f-grape" data-group="image" data-t="17" data-name="Photo · Split" data-tags="Photo · Hard split · Grape field"
+ data-adapt="<b>Change</b> photo (1080 × 980, subject centred), eyebrow, headline (≤ 3 lines) and CTA. <b>Keep</b> the straight horizontal split; white type on Grape starting ≥ 90 px below the seam. <b>Wordmark</b> white, on the Grape bottom-left.">
+  <div class="img" style="left:0;top:0;width:1080px;height:980px"><span style="transform:translateY(60px)">Photo<small>1080 × 980 · subject centred</small></span></div>
+  <div class="a stack" style="left:90px;top:1070px;width:900px">
+    <div class="ey c-wh">Customer story</div>
+    <div class="hl c-wh" style="font-size:108px">Same team. Very different Tuesdays.</div>
+  </div>
+  <div class="a row" style="left:90px;right:90px;top:1480px;justify-content:space-between">
+    <img src="../../assets/juicysuite-wordmark-white.svg" alt="JuicySuite" style="width:200px;display:block">
+    <span class="cta wh">Read the story</span>
+  </div>
+</article>
+
+<!-- 18 · Collage — two photo prints on cream -->
+<article class="post st f-cream" data-group="image" data-t="18" data-name="Photo · Collage" data-tags="Photo · Two prints · Cream"
+ data-adapt="<b>Change</b> eyebrow, headline (≤ 3 lines), two photos and the result toast. <b>Keep</b> two white-bordered prints at opposing tilts (−4° / +3°), the toast overlapping the lower print. <b>Wordmark</b> orange, top-right on the eyebrow line.">
+  <img class="wm" src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite" style="right:90px;top:268px;width:200px">
+  <div class="a stack" style="left:90px;top:270px;width:900px">
+    <div class="ey">Case study</div>
+    <div class="hl" style="font-size:112px">Three cafés, one loyalty list.</div>
+  </div>
+  <div class="a" style="left:96px;top:760px;width:560px;height:640px;background:#fff;padding:22px;border-radius:28px;box-shadow:0 18px 44px rgba(71,66,66,.14);transform:rotate(-4deg)"><div class="img" style="inset:22px;border-radius:12px"><span>Photo 1<small>counter</small></span></div></div>
+  <div class="a" style="left:470px;top:880px;width:520px;height:600px;background:#fff;padding:22px;border-radius:28px;box-shadow:0 18px 44px rgba(71,66,66,.16);transform:rotate(3deg)"><div class="img" style="inset:22px;border-radius:12px"><span>Photo 2<small>regulars</small></span></div></div>
+  <div class="a ui row" style="left:90px;top:1420px;padding:26px 40px 26px 28px;gap:22px">
+    <span class="ico" style="width:76px;height:76px;background:#E6F9E6;color:#00874B" data-icon="users"></span>
+    <div><div class="ui-t" style="font-size:34px">4,100 regulars moved</div><div class="ui-m" style="font-size:24px;margin-top:4px">paper stamps → one member list</div></div>
+  </div>
+</article>
+
+<!-- 19 · Drop photo — Butter × Sunset, drop bleeding right -->
+<article class="post st p6" data-group="image" data-t="19" data-name="Photo · Drop" data-tags="Photo · DropTall crop · Butter field"
+ data-adapt="<b>Change</b> photo (tall, subject centred), eyebrow, headline (≤ 5 lines in the column), body and CTA. <b>Keep</b> the photo in a DropTall bleeding off the right edge, type in the left column only, the Sunset-fill marble cropping bottom-left with no type. <b>Wordmark</b> black, top-left.">
+  <js-shape shape="dropTall" photo="placeholder" label="Photo|tall crop" style="left:680px;top:250px;width:520px;height:1470px"></js-shape>
+  <js-shape shape="marble" grad="pair6" style="left:-150px;top:1560px;width:480px;height:480px"></js-shape>
+  <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="left:90px;top:270px;width:200px">
+  <div class="a stack" style="left:90px;top:700px;width:530px">
+    <div class="ey c-ink">Wallet pass</div>
+    <div class="hl" style="font-size:74px">Loyalty cards,<br>now in every<br>phone wallet.</div>
+    <div class="bd c-ink" style="font-size:34px;font-weight:600">Members add the card from a QR code at the counter.</div>
+    <div class="cta ink" style="margin-top:48px">See how</div>
+  </div>
+</article>
+
+<!-- 20 · Bloom photo — Coral × Citrus, bloom bleeding top-right -->
+<article class="post st p5" data-group="image" data-t="20" data-name="Photo · Bloom bleed" data-tags="Photo · Bloom crop · Coral field"
+ data-adapt="<b>Change</b> photo (subject in the bloom's centre), eyebrow, headline (≤ 2 lines) and body. <b>Keep</b> the photo-filled bloom bleeding off the top-right; type in ink on the field beneath, never on the photo. <b>Wordmark</b> black, top-left below the 250 px line.">
+  <js-shape shape="bloom" photo="placeholder" label="Photo|subject centred" style="left:270px;top:110px;width:1040px;height:1040px"></js-shape>
+  <img class="wm" src="../../assets/juicysuite-wordmark-black.svg" alt="JuicySuite" style="left:90px;top:270px;width:200px">
+  <div class="a stack" style="left:90px;top:1140px;width:900px">
+    <div class="ey c-ink">Points, in real time</div>
+    <div class="hl" style="font-size:112px">Earn at the till, not later.</div>
+    <div class="bd c-ink" style="font-weight:600;width:820px">Every scan updates the balance before the receipt prints.</div>
+  </div>
 </article>
 
 </body></html>

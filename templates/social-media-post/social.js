@@ -2,11 +2,13 @@
 // 1. <js-shape> renders the real DS silhouettes (shapes.js ← components/shapes/Blob.jsx).
 // 2. <i class="ico" data-icon="gift"> renders DS icons (paths copied from components/core/Icon.jsx).
 // 3. View modes for every format file:
-//      (default)      browse — 8 templates with name, tags and how-to-adapt note
+//      (default)      browse — every template with name, tags and how-to-adapt note
 //      ?t=03          export — template 03 alone at exact pixel size, no chrome (screenshot this)
 //      ?sheet=1       contact sheet — all 8 on one board with labels (review)
-//      ?row=1         one-row strip for the master 8 × 8 overview
+//      ?row=1         one-row strip for the master overview (grouped formats wrap: one row per group)
 //      &guides=1      dashed safe-area overlay on every post
+//      Formats with grouped posts (data-group on <article>, Story / Reels only) also take
+//      &set=core|general|image|core,general  filter groups · &cols=N  sheet columns; group headings are inserted
 (() => {
   const P = window.JS_BLOB_PATHS || {};
   const G = window.JS_BLOB_GRADIENTS || {};
@@ -109,7 +111,7 @@
   const q = new URLSearchParams(location.search);
   function boot() {
     icons(document); pagers(document);
-    const posts = [...document.querySelectorAll("article.post")];
+    let posts = [...document.querySelectorAll("article.post")];
     const fmt = document.body.dataset;
     if (q.get("guides")) document.body.classList.add("guides");
     const t = q.get("t");
@@ -126,7 +128,10 @@
     }
     const W = posts[0] ? posts[0].offsetWidth : 1080, H = posts[0] ? posts[0].offsetHeight : 1080;
     const sheet = q.get("sheet"), row = q.get("row");
-    const cols = row ? 8 : 4;
+    const grouped = posts.some(p => p.dataset.group);
+    if (grouped && q.get("set")) { const keep = q.get("set").split(","); posts.filter(p => !keep.includes(p.dataset.group)).forEach(p => p.remove()); posts = posts.filter(p => keep.includes(p.dataset.group)); }
+    const cols = +q.get("cols") || (row ? 8 : 4);
+    const GL = { core: "Core set", general: "General · type & shape", image: "Image-led" };
     base.textContent = `
       html,body{margin:0;background:#F5F3EE;font-family:Montserrat,sans-serif;color:#474242}
       .hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:40px 48px 8px}
@@ -144,11 +149,20 @@
       .cell .nt b{color:#474242}
       .cell a.ex{font-size:12px;font-weight:700}
       ${sheet || row ? ".cell .nt,.cell a.ex{display:none}" : ""}
-      ${row ? ".hdr{display:none}.cell .lb{display:none}" : ""}`;
+      ${row ? ".hdr{display:none}.cell .lb{display:none}" : ""}
+      .gl{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;padding-top:${row ? 10 : 22}px;border-top:1px solid rgba(71,66,66,.12);font-size:${row ? 15 : 13}px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#FF761A}
+      .gl:first-child{border-top:0;padding-top:0}.gl span{font-size:${row ? 15 : 13}px;letter-spacing:.06em;text-transform:none;color:#474242}`;
     const hdr = document.createElement("header"); hdr.className = "hdr";
     hdr.innerHTML = `<div><div class="e">Social Media Post Template · ${fmt.no} / 08</div><h1>${fmt.name}</h1><p>${fmt.size} · ${fmt.use}</p></div><img src="../../assets/juicysuite-wordmark-orange.svg" alt="JuicySuite">`;
     const grid = document.createElement("main"); grid.className = "grid";
+    let lastG = null;
     posts.forEach(p => {
+      if (grouped && p.dataset.group !== lastG) {
+        const gs = posts.filter(x => x.dataset.group === p.dataset.group);
+        const g = document.createElement("div"); g.className = "gl";
+        g.innerHTML = `${gs[0].dataset.t}–${gs[gs.length - 1].dataset.t}<span>${GL[p.dataset.group] || p.dataset.group} · ${gs.length} templates</span>`;
+        grid.appendChild(g); lastG = p.dataset.group;
+      }
       const c = document.createElement("section"); c.className = "cell";
       const tags = (p.dataset.tags || "").split("·").map(s => s.trim()).filter(Boolean).slice(0, 2).join(" · ");
       c.innerHTML = `<div class="lb">${p.dataset.t} · ${p.dataset.name}<span>${tags}</span></div><div class="fr"></div>`;

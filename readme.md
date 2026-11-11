@@ -33,7 +33,7 @@ templates/
   deck/               Deck.dc.html — 12-slide 16:9 layout template, one slide per Composition Balance arrangement
   report/             Report.dc.html — printable monthly performance report
   proposal/           Proposal.dc.html — printable proposal / quotation
-  social-media-post/  SocialMediaPost.dc.html — Social Media Post Template: 8 formats × 8 templates (64 posts) at exact export sizes; one file per format, overview.html for the 8 × 8 grid
+  social-media-post/  SocialMediaPost.dc.html — Social Media Post Template: 8 formats, 76 posts at exact export sizes (8 templates per format; Story / Reels has 20); one file per format, overview.html for the full grid
 SKILL.md              agent-skill entry point
 thumbnail.html        homepage tile (Sunset + white wordmark)
 uploads/              original v2.0 source zip contents + daily-report EDM HTML
@@ -59,7 +59,7 @@ uploads/              original v2.0 source zip contents + daily-report EDM HTML
 | 07 | Landscape LinkedIn | 1200 × 627 | `07-landscape-linkedin.html` |
 | 08 | Carousel cover | 1080 × 1080 | `08-carousel-cover.html` |
 
-- Each format file shows its 8 templates with a how-to-adapt note; `?t=03` shows one post alone at exact pixels for export, `?sheet=1` a contact sheet, `&guides=1` the safe-area overlay.
+- Each format file shows its templates (8 per format; Story / Reels has 20 in three groups: 01–08 core, 09–14 general type & shape, 15–20 image-led) with a how-to-adapt note; `?t=03` shows one post alone at exact pixels for export, `?sheet=1` a contact sheet (Story / Reels also takes `&set=core|general|image` and `&cols=N`), `&guides=1` the safe-area overlay.
 - Safe margins: 80 px (square, portrait), 60 px (landscape); stories keep type and wordmark 250 px from the top and 340 px from the bottom.
 - Swap slots per post: eyebrow, headline, supporting line or quote, optional stat, optional image (`.img` box or `<js-shape photo="…">`), CTA, wordmark (orange / white / black only).
 - Text sits in one zone (one shape, one card or open field). Max two gradients in view. Shape-led and shape-free templates alternate inside every format.
